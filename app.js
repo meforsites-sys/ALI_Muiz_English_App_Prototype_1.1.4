@@ -478,6 +478,7 @@ function filterLiteratureGuide(){
  const count=document.getElementById('literatureGuideCount');if(count)count.textContent=q?`النتائج المطابقة: ${shown} من ${cards.length}`:`عدد البطاقات: ${cards.length}`;
 }
 function goHome(){document.getElementById('contentPanel').hidden=true;document.getElementById('mainGrid').hidden=false;document.querySelector('.section-head').hidden=false;document.querySelector('.hero').hidden=false;document.querySelector('.note').hidden=false;window.scrollTo({top:0,behavior:'smooth'})}
+function openStandalone(){window.location.href='eng6_units_v1.5.1_standalone.html';}
 document.getElementById('menuBtn').addEventListener('click',()=>showSection('units'));
 
 function renderGrammar(){

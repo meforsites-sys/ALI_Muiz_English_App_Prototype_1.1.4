@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>إنكليزي السادس الإعدادي</title>
+<style>
+:root{--nv:#0e2235;--tl:#1a8a7e;--tllt:#e6f5f3;--tm:#2ba99a;--ink:#1a2e3b;--mu:#6b7f8e;--paper:#f3f6f9;--wh:#fff;--bd:#dde5eb;--gd:#c89b3c;--r:14px;--ok:#1e7a4a;--no:#b13a2c}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Tajawal',sans-serif;font-size:16px;overflow-x:hidden}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sr{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+.fu{animation:fu .38s cubic-bezier(.22,1,.36,1) both}
+.sr{animation:sr .34s cubic-bezier(.22,1,.36,1) both}
+.pop{animation:pop .34s cubic-bezier(.22,1,.36,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.1s}.d3{animation-delay:.15s}
+.d4{animation-delay:.2s}.d5{animation-delay:.25s}.d6{animation-delay:.3s}
+.d7{animation-delay:.35s}.d8{animation-delay:.4s}
+
+/* BAR */
+.bar{position:sticky;top:0;z-index:99;background:var(--nv);height:62px;
+  display:flex;align-items:center;padding:0 max(calc((100% - 1100px)/2),16px);gap:12px}
+.logo{width:40px;height:40px;border-radius:11px;background:#1f3f56;display:grid;
+  place-items:center;font:800 15px 'Poppins',Arial,sans-serif;color:#7dd3cc;cursor:pointer;transition:.2s;flex-shrink:0}
+.logo:hover{background:#2a5570;transform:scale(1.06)}
+.bar-t{color:#fff;font:700 15px 'Tajawal',Arial,sans-serif;flex:1;min-width:0}
+.bar-t small{display:block;color:#7a9db5;font-size:11px;font-weight:400;font-family:'Poppins',Arial,sans-serif}
+.bb{border:0;background:#1f3f56;border-radius:9px;width:38px;height:38px;color:#9ecfcc;
+  cursor:pointer;display:grid;place-items:center;transition:.2s;font-size:16px;flex-shrink:0}
+.bb:hover{background:#2a5570;transform:scale(1.08)}
+main{max-width:1100px;margin:auto;padding:26px 16px 72px}
+
+/* HERO */
+.hero{background:var(--nv);border-radius:20px;padding:38px 42px;position:relative;overflow:hidden;margin-bottom:28px}
+.h-eye{font:700 11px 'Poppins',Arial,sans-serif;color:#5ecec6;letter-spacing:1.2px;margin-bottom:10px}
+.hero h1{font-size:clamp(26px,4vw,46px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:10px}
+.hero h1 em{color:#5ecec6;font-style:normal}
+.hero p{color:#91b4c8;font-size:15px;line-height:1.85;max-width:490px;margin-bottom:24px}
+.hbs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+.btn-p{border:0;border-radius:11px;padding:11px 22px;font:700 14px 'Tajawal',Arial,sans-serif;background:var(--tm);color:#fff;cursor:pointer;transition:.2s}
+.btn-p:hover{background:#239d8d;transform:translateY(-2px)}
+.btn-g{border:1px solid #3a5f7a;border-radius:11px;padding:11px 22px;font:700 14px 'Tajawal',Arial,sans-serif;background:transparent;color:#c5dde8;cursor:pointer;transition:.2s}
+.btn-g:hover{background:#1f3f56;transform:translateY(-2px)}
+.hn{display:flex;gap:28px;flex-wrap:wrap}
+.hn b{font:800 28px 'Poppins',Arial,sans-serif;color:#5ecec6;display:block;line-height:1}
+.hn small{font-size:11px;color:#7a9db5;font-weight:600;font-family:'Poppins',Arial,sans-serif}
+
+/* HOME GRID */
+.sl{font:900 20px 'Tajawal',Arial,sans-serif;color:var(--nv);margin-bottom:4px}
+.ss{font-size:14px;color:var(--mu);margin-bottom:18px}
+.hgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:var(--wh);border:1px solid var(--bd);border-radius:var(--r);padding:17px;cursor:pointer;transition:.22s;position:relative;text-align:right;font-family:inherit}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 26px #0e22350e;border-color:#b8cdd8}
+.c-ico{width:40px;height:40px;border-radius:11px;background:var(--tllt);display:grid;place-items:center;font-size:19px;margin-bottom:12px;transition:.2s}
+.card:hover .c-ico{transform:scale(1.1)}
+.card b{display:block;font-size:15px;font-weight:800;color:var(--nv)}
+.card small{color:var(--mu);font-size:12px;line-height:1.6;margin-top:3px;display:block}
+.c-arr{position:absolute;left:14px;bottom:15px;color:var(--tl);font-size:17px;opacity:.5;transition:.2s}
+.card:hover .c-arr{opacity:1;transform:translateX(-4px)}
+.c-new{position:absolute;left:11px;top:11px;background:var(--gd);color:#fff;font:700 9px 'Poppins',Arial,sans-serif;padding:3px 7px;border-radius:20px;animation:pop .4s .6s both}
+
+/* PANEL */
+.panel{background:var(--wh);border:1px solid var(--bd);border-radius:20px;padding:24px;margin-top:4px}
+.pnav{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.back{border:1px solid var(--bd);background:var(--paper);color:var(--nv);padding:8px 15px;border-radius:10px;font:700 13px 'Tajawal',Arial,sans-serif;cursor:pointer;transition:.2s}
+.back:hover{background:#e2eef4;transform:translateX(3px)}
+.bc{font-size:12px;color:var(--mu)}
+.pt{font-size:22px;font-weight:900;color:var(--nv);margin-bottom:4px}
+.ps{font-size:14px;color:var(--mu);line-height:1.8;margin-bottom:18px}
+
+/* UNIT TABS */
+.utabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:6px;margin:0 0 20px;scrollbar-width:thin;scroll-snap-type:x mandatory}
+.utabs::-webkit-scrollbar{height:3px}.utabs::-webkit-scrollbar-thumb{background:#c5dde0;border-radius:3px}
+.utab{border:1px solid var(--bd);background:var(--paper);color:#24465d;border-radius:10px;padding:10px 16px;font:700 13px 'Tajawal',Arial,sans-serif;cursor:pointer;transition:.2s;white-space:nowrap;flex-shrink:0;scroll-snap-align:start;text-align:center}
+.utab:hover{background:var(--tllt)}
+.utab.on{background:var(--tllt);border-color:var(--tl);color:var(--tl)}
+.utab b{display:block;font-size:12px;font-family:'Poppins',Arial,sans-serif}
+.utab small{font-size:11px;color:var(--mu);display:block}
+.utab.on small{color:var(--tl);opacity:.8}
+
+/* SUB-TABS */
+.subtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.stab{border:1px solid var(--bd);background:var(--paper);color:var(--nv);border-radius:9px;padding:9px 14px;font:700 13px 'Tajawal',Arial,sans-serif;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:5px}
+.stab:hover{background:var(--tllt);border-color:#9acdd0}
+.stab.on{background:var(--tllt);border-color:var(--tl);color:var(--tl)}
+.cbadge{background:var(--tl);color:#fff;border-radius:20px;padding:1px 7px;font-size:11px;font-family:'Poppins',Arial,sans-serif;font-weight:700;min-width:20px;text-align:center}
+.stab.on .cbadge{background:var(--nv)}
+
+/* UNIT CONTENT */
+.uc-box{animation:fu .3s both}
+.uc-title{font:900 20px 'Tajawal',Arial,sans-serif;color:var(--nv);margin-bottom:3px}
+.uc-sub{font-size:13px;color:var(--mu);margin-bottom:16px;line-height:1.7}
+
+/* LESSONS TABLE */
+.ltbl{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:13px}
+.ltbl th{background:var(--nv);color:#fff;padding:9px 12px;text-align:right;font-weight:800}
+.ltbl td{padding:9px 12px;border-bottom:1px solid #edf2f5;color:#3a526b}
+.ltbl tr:hover td{background:#f7fafc}
+.ltbl td:last-child{font-family:'Poppins',Arial,sans-serif;color:var(--tl);font-weight:700;font-size:12px;text-align:left}
+
+/* GRAMMAR */
+.gc{border:1px solid var(--bd);border-radius:12px;margin:7px 0;overflow:hidden;background:var(--wh);transition:.18s}
+.gc:hover{border-color:#b8cdd8}
+.gc summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;padding:13px 15px;transition:.12s;user-select:none}
+.gc summary:hover{background:#f7fafc}
+.gc summary::-webkit-details-marker{display:none}
+.gc[open] summary{background:#f4faf9}
+.gc summary b{flex:1;color:var(--nv);font-size:14px;font-weight:800}
+.gb{padding:16px 18px;border-top:1px solid #edf2f5;animation:fu .28s both}
+.g-badge{display:grid;place-items:center;min-width:30px;height:30px;border-radius:8px;background:var(--tllt);color:var(--tl);font:800 12px 'Poppins',Arial,sans-serif;flex-shrink:0}
+.g-meta{font-size:11px;color:var(--mu);white-space:nowrap;font-family:'Poppins',Arial,sans-serif}
+.g-art{color:var(--tl);font-size:15px;font-weight:800;margin-bottom:9px}
+.g-rulebox{background:#f4faf9;border-right:4px solid var(--tl);border-radius:10px;padding:14px 16px;margin-bottom:12px}
+.g-ruletext{font-size:14px;line-height:2.1;color:#1a3d36;white-space:pre-line}
+.g-en{background:#eff6f8;padding:12px 16px;border-radius:9px;border-right:4px solid var(--tl);font:600 13px/1.75 'Poppins',Arial,sans-serif;color:#163b56;text-align:left;direction:ltr;white-space:pre-line;margin-bottom:10px}
+.g-tr{color:var(--tl);font-size:14px;font-weight:700;margin-bottom:10px;white-space:pre-line;line-height:1.9}
+.g-src{font-size:11px;color:var(--mu);display:block;margin-top:9px;border-top:1px solid #edf2f5;padding-top:9px;font-family:'Poppins',Arial,sans-serif}
+
+/* EXERCISE CARDS */
+.exgroup{margin:12px 0 16px;border:1px solid var(--bd);border-radius:14px;overflow:hidden;background:var(--wh)}
+.exhead{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;background:var(--paper);border-bottom:1px solid var(--bd)}
+.exhead b{font-size:13px;color:var(--nv);font-weight:800}
+.expill{font-size:11px;color:var(--tl);background:var(--tllt);padding:3px 10px;border-radius:20px;font-family:'Poppins',Arial,sans-serif;font-weight:700}
+.ec{border-bottom:1px solid #edf2f5}
+.ec:last-child{border-bottom:0}
+.ec summary{display:flex;align-items:center;gap:10px;list-style:none;cursor:pointer;padding:12px 15px;transition:.12s;user-select:none}
+.ec summary:hover{background:#f7fafc}
+.ec summary::-webkit-details-marker{display:none}
+.ec[open] summary{background:#f4faf9}
+.e-ltr{display:grid;place-items:center;min-width:28px;height:28px;border-radius:7px;background:var(--tllt);color:var(--tl);font:800 12px 'Poppins',Arial,sans-serif;flex-shrink:0}
+.e-h{font-size:13px;font-weight:800;flex:1;color:var(--nv)}
+.e-m{font-size:11px;color:var(--mu);white-space:nowrap;font-family:'Poppins',Arial,sans-serif}
+.eb{padding:13px 16px;border-top:1px solid #edf2f5;animation:fu .28s both}
+.eb pre{white-space:pre-wrap;overflow-wrap:anywhere;text-align:left;direction:ltr;background:var(--paper);border-radius:9px;padding:12px;font:13px/1.8 'Poppins',Arial,sans-serif;color:#24394a;margin:7px 0}
+
+/* MINISTERIAL Q TABLE */
+.mqbox{background:var(--paper);border:1px solid var(--bd);border-radius:12px;margin:12px 0;overflow:hidden}
+.mqhead{background:var(--nv);color:#fff;padding:10px 15px;font:800 13px 'Tajawal',Arial,sans-serif;display:flex;align-items:center;gap:8px}
+.mqbody{padding:14px 16px}
+.mqtbl{width:100%;border-collapse:collapse;font-size:13px}
+.mqtbl th{background:var(--tllt);color:var(--nv);padding:8px 11px;text-align:right;border:1px solid #c0dede}
+.mqtbl th:last-child{text-align:left;direction:ltr}
+.mqtbl td{padding:8px 11px;border:1px solid #d9e8e8;color:#3a526b}
+.mqtbl td:last-child{color:var(--ok);font-family:'Poppins',Arial,sans-serif;font-weight:700;direction:ltr;text-align:left}
+
+/* VOCAB */
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}
+.vc{border:1px solid var(--bd);background:var(--wh);border-radius:11px;padding:12px;display:flex;flex-direction:column;gap:4px;transition:.2s}
+.vc:hover{border-color:#9acdd0;transform:translateY(-2px)}
+.vc span{font-size:10px;color:var(--tl);font-weight:800;font-family:'Poppins',Arial,sans-serif}
+.vc b{font:700 15px 'Poppins',Arial,sans-serif;color:var(--nv);text-align:left;direction:ltr}
+.vc small{font-size:12px;color:var(--mu)}
+
+/* VOCAB SECTION LABEL */
+.vsec{margin:16px 0 10px;font:800 14px 'Tajawal',Arial,sans-serif;color:var(--nv);display:flex;align-items:center;gap:8px}
+.vsec::after{content:'';flex:1;height:1px;background:var(--bd)}
+
+/* WRITING CARDS */
+.wcard{background:var(--wh);border:1px solid var(--bd);border-radius:13px;margin:9px 0;overflow:hidden}
+.wcard details summary{display:flex;align-items:center;gap:10px;padding:12px 15px;background:#f4faf9;border-bottom:1px solid #edf2f5;cursor:pointer;user-select:none;list-style:none}
+.wcard details summary::-webkit-details-marker{display:none}
+.wcard-ico{background:var(--gd);color:#fff;border-radius:8px;width:28px;height:28px;display:grid;place-items:center;font-size:14px;flex-shrink:0}
+.wcard-h{flex:1;font-size:13px;font-weight:800;color:var(--nv)}
+.wcard-body{padding:15px 17px;animation:fu .28s both}
+.wcard-body pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--paper);border-radius:9px;padding:13px;font:13px/1.85 'Poppins',Arial,sans-serif;text-align:left;direction:ltr;color:#24394a;margin:9px 0}
+.wcard-prompt{background:var(--paper);border-right:3px solid var(--gd);border-radius:9px;padding:11px 14px;font-size:13px;color:#3a526b;margin-bottom:9px}
+.wcard-ar{background:#fffaee;border-right:3px solid var(--gd);border-radius:9px;padding:12px 15px;font-size:13px;line-height:2;color:#5a4010;margin-top:8px}
+
+/* TOOLS */
+.tools{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.tools input,.tools select,.sbox{border:1px solid var(--bd);border-radius:10px;padding:10px 13px;font-family:'Tajawal',Arial,sans-serif;font-size:14px;direction:rtl;background:var(--wh);color:var(--ink);flex:1;min-width:130px;transition:.2s}
+.tools input:focus,.tools select:focus{outline:none;border-color:var(--tl);box-shadow:0 0 0 3px #1a8a7e18}
+.cntxt{font-size:13px;font-weight:700;color:var(--tl);margin-bottom:11px}
+.empty{padding:28px;background:var(--paper);border-radius:12px;color:var(--mu);text-align:center;font-size:14px}
+.lmr{display:block;width:100%;border:1px solid #c5dde0;background:var(--tllt);color:var(--tl);border-radius:11px;padding:12px;font:700 14px 'Tajawal',Arial,sans-serif;cursor:pointer;margin:10px 0;transition:.2s}
+.lmr:hover{background:#d4edeb;transform:translateY(-2px)}
+
+/* QUIZ */
+.qcard{border:1px solid var(--bd);border-radius:15px;padding:20px;background:var(--wh)}
+.qprog{font-size:12px;color:var(--mu);margin-bottom:12px;font-weight:600;font-family:'Poppins',Arial,sans-serif}
+.qq{font:700 17px/1.65 'Poppins',Arial,sans-serif;color:var(--nv);direction:ltr;text-align:left;margin-bottom:16px;border-right:4px solid var(--tl);padding-right:13px}
+.qopts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.qo{border:1px solid var(--bd);background:var(--wh);border-radius:10px;padding:12px;cursor:pointer;font:600 13px 'Poppins',Arial,sans-serif;transition:.2s;text-align:left;direction:ltr}
+.qo:hover:not(:disabled){background:var(--tllt);border-color:#9acdd0;transform:translateY(-2px)}
+.qo.ok{background:#e5f6ec;border-color:#65b98b;color:var(--ok);animation:pop .3s both}
+.qo.no{background:#fef0ee;border-color:#e59b8f;color:var(--no)}
+.qo:disabled{cursor:default}
+.qfb{background:var(--tllt);padding:13px 15px;border-radius:9px;line-height:1.9;font-size:14px;margin:10px 0;color:#1a3d36;animation:sr .3s both}
+.qres{text-align:center;padding:14px 0;animation:fu .4s both}
+.qres .sc{font:800 50px 'Poppins',Arial,sans-serif;color:var(--tl);display:block;line-height:1.1}
+.qres p{color:var(--mu);font-size:14px;margin:9px 0 22px}
+
+/* LIT */
+.ltabs2{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 9px}
+.ltab2{border:1px solid var(--bd);background:var(--paper);color:#24465d;border-radius:10px;padding:9px 15px;font:700 13px 'Tajawal',Arial,sans-serif;cursor:pointer;transition:.2s}
+.ltab2:hover{background:var(--tllt)}
+.ltab2.on{background:var(--tllt);border-color:var(--tl);color:var(--tl)}
+.lworks{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.lwork{border:1px solid var(--bd);background:var(--paper);border-radius:10px;padding:9px 15px;font:400 13px 'Tajawal',Arial,sans-serif;cursor:pointer;transition:.2s}
+.lwork b{display:block;font-size:13px;font-weight:800;color:var(--nv)}
+.lwork small{font-size:11px;color:var(--mu)}
+.lwork.on{background:var(--tllt);border-color:var(--tl)}
+.lsec{margin:12px 0 18px;animation:fu .3s both}
+.lsec-h{display:flex;justify-content:space-between;align-items:center;background:var(--paper);border-radius:12px;padding:13px 16px;margin-bottom:10px}
+.lsec-h b{font:800 15px 'Poppins',Arial,sans-serif;color:var(--nv);text-align:left;direction:ltr;display:block}
+.lsec-h small{font-size:12px;color:var(--mu)}
+.lsec-h em{font:700 11px 'Poppins',Arial,sans-serif;color:var(--tl);font-style:normal}
+.lcards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.lcard{border:1px solid var(--bd);border-radius:12px;padding:15px;background:var(--wh);transition:.18s}
+.lcard:hover{border-color:#b8cdd8}
+.lct{display:flex;gap:9px;align-items:flex-start;margin-bottom:9px}
+.lstep{display:grid;place-items:center;min-width:28px;height:28px;border-radius:8px;background:var(--tllt);color:var(--tl);font:800 12px 'Poppins',Arial,sans-serif;flex-shrink:0;margin-top:1px}
+.lct div b{display:block;font-size:13px;color:var(--nv);font-weight:800}
+.lct div small{display:block;color:var(--mu);font-size:11px;margin-top:2px}
+.lcard ul{padding-right:15px;color:#40596b;font-size:13px;line-height:2}
+.lcard p{font-size:13px;line-height:1.9;color:#40596b}
+.lsrc-box{border-top:1px solid #edf2f5;padding-top:7px;margin-top:9px;font-size:11px}
+.lsrc-box span{display:block;background:var(--paper);border-radius:7px;padding:5px 9px;color:#476274}
+.rvbtn{border:1px solid #c5dde0;background:var(--tllt);color:var(--tl);border-radius:8px;padding:7px 13px;font:700 12px 'Tajawal',Arial,sans-serif;cursor:pointer;margin:6px 0;transition:.2s;display:block}
+.rvbtn:hover{background:#d4edeb}
+.rvans{background:var(--paper);border-radius:9px;padding:9px 12px;margin-top:5px;animation:fu .28s both}
+.rvans ul{padding-right:15px;font-size:13px;line-height:2}
+.lit-note{background:#fffaee;border:1px solid #f0dfb5;color:#7a5c1e;padding:13px 15px;border-radius:10px;font-size:13px;line-height:1.9;margin-top:16px}
+
+/* STATS */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:18px}
+.scard{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:16px;text-align:center;transition:.2s}
+.scard:hover{transform:translateY(-3px)}
+.scard b{display:block;font:800 34px 'Poppins',Arial,sans-serif;color:var(--tl);margin-bottom:4px}
+.scard small{color:var(--mu);font-size:13px}
+.about{background:var(--paper);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.about h4{margin-bottom:11px;color:var(--nv);font-size:15px;font-weight:800}
+.about table{width:100%;font-size:14px;border-collapse:collapse}
+.about td{padding:8px 10px;border-bottom:1px solid var(--bd);color:#3a526b}
+.about td:first-child{font-weight:800;color:var(--nv);width:38%}
+.about tr:last-child td{border:0}
+.vbadge{display:inline-block;background:var(--nv);color:#5ecec6;font:700 12px 'Poppins',Arial,sans-serif;padding:5px 13px;border-radius:20px;margin-top:12px}
+
+footer{background:var(--nv);display:flex;align-items:center;gap:13px;padding:20px max(calc((100% - 1100px)/2),16px);flex-wrap:wrap}
+footer b{background:#1f3f56;padding:9px;border-radius:9px;color:#5ecec6;font:800 13px 'Poppins',Arial,sans-serif}
+footer span{font:600 12px 'Poppins',Arial,sans-serif;color:#91b4c8}
+footer small{margin-right:auto;color:#5a7f98;font-size:12px}
+
+@media(max-width:860px){.hgrid{grid-template-columns:repeat(2,1fr)}.lcards{grid-template-columns:1fr}}
+@media(max-width:620px){.hero{padding:26px 20px}.vgrid{grid-template-columns:repeat(2,1fr)}.qopts{grid-template-columns:1fr}.tools{flex-direction:column}.sg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){main{padding:12px 10px 48px}.hgrid{gap:8px}.card{padding:13px}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="logo" onclick="goHome()">E6</div>
+  <div class="bar-t">إنكليزي السادس الإعدادي<small>ENGLISH FOR IRAQ · 2026–2027</small></div>
+  <button class="bb" onclick="showSection('search')">🔍</button>
+  <button class="bb" onclick="goHome()">⊞</button>
+</div>
+<main>
+  <div class="hero fu" id="heroSection">
+    <div class="h-eye">📚 ENGLISH FOR IRAQ · السادس الإعدادي</div>
+    <h1>قواعد، تمارين<br>و<em>أدب وزاري</em></h1>
+    <p>8 وحدات كاملة · 21 موضوعاً قواعدياً · 120 سؤال وزاري مع الحلول · 10 إنشاء بنموذج · 269 مفردة</p>
+    <div class="hbs">
+      <button class="btn-p" onclick="showSection('units')">📚 الوحدات</button>
+      <button class="btn-p" onclick="showSection('grammar')">📐 القواعد</button>
+      <button class="btn-p" onclick="showSection('literature')">🎭 الأدب</button>
+      <button class="btn-g" onclick="showSection('tests')">📝 الاختبار</button>
+    </div>
+    <div class="hn">
+      <div><b>8</b><small>UNITS</small></div>
+      <div><b>9+</b><small>TOPICS/UNIT</small></div>
+      <div><b>200+</b><small>EXERCISES</small></div>
+      <div><b>110</b><small>MARKS</small></div>
+    </div>
+  </div>
+  <div id="homeView">
+    <div class="sl fu d1">اختر القسم</div>
+    <div class="ss fu d2">الإصدار 1.5.1 · 8 وحدات كاملة · المحتوى من ملازم الأستاذ علي معز الشلاه حصراً</div>
+    <div class="hgrid">
+      <button class="card fu d1" onclick="showSection('units')"><div class="c-ico">📚</div><b>الوحدات</b><small>8 وحدات كاملة · 21 موضوعاً · 120 سؤال وزاري · 10 إنشاء</small><span class="c-arr">←</span></button>
+      <button class="card fu d2" onclick="showSection('grammar')"><div class="c-ico">📐</div><b>القواعد</b><small>شروحات الملازم حصراً</small><span class="c-arr">←</span></button>
+      <button class="card fu d3" onclick="showSection('exercises')"><div class="c-ico">✏️</div><b>التمارين</b><small>مجمّعة حسب الموضوع</small><span class="c-arr">←</span></button>
+      <button class="card fu d4" onclick="showSection('vocabulary')"><div class="c-ico">🔤</div><b>المفردات</b><small>جميع مفردات الوحدة الأولى</small><span class="c-arr">←</span></button>
+      <button class="card fu d5" onclick="showSection('literature')"><div class="c-ico">🎭</div><b>الأدب</b><small>Pride & Prejudice · As You Like It</small><span class="c-arr">←</span></button>
+      <button class="card fu d6" onclick="showSection('tests')"><div class="c-ico">📝</div><b>الاختبار</b><small>اختبار تدريبي تفاعلي</small><span class="c-new">جديد</span><span class="c-arr">←</span></button>
+      <button class="card fu d7" onclick="showSection('stats')"><div class="c-ico">📊</div><b>إحصائي</b><small>تقدمك وحول التطبيق</small><span class="c-arr">←</span></button>
+      <button class="card fu d8" onclick="showSection('search')"><div class="c-ico">🔍</div><b>البحث</b><small>ابحث في كل المحتوى</small><span class="c-arr">←</span></button>
+    </div>
+  </div>
+  <div class="panel fu" id="contentPanel" hidden>
+    <div class="pnav"><button class="back" onclick="goHome()">← الرئيسية</button><span class="bc" id="bc"></span></div>
+    <div id="pb"></div>
+  </div>
+</main>
+<footer>
+  <b>E6</b><span>ENGLISH · SIXTH GRADE · 2026–2027</span>
+  <small>الأستاذ علي معز الشلاه · مكتب الوسام · الحلة، بابل</small>
+</footer>
+<script>
+// ═══════════════════════════════════════
+// GRAMMAR RULES (من الملزمة حصراً)
+// ═══════════════════════════════════════
+const GR={
+"past-simple":{t:"Past Simple",ar:"الماضي البسيط",u:1,
+ rule:`يستخدم للتعبير عن أحداث بدأت وانتهت في الماضي خلال فترة زمنية محددة ومعروفة.
+
+الإثبات: I/we/you/they/he/she/it + فعل قياسي+ed أو شاذ
+النفي: I/we/you/they/he/she/it + did not + فعل مضارع مجرد
+السؤال: Did + I/we/you/they/he/she/it + فعل مضارع مجرد + ؟
+
+فعل الكينونة (be):
+إثبات → was/were  |  نفي → was not / were not  |  سؤال → Was/Were...?
+
+ملاحظات:
+١. الدلائل الزمنية: yesterday / last + / ago + مدة / أي تاريخ في الماضي
+٢. الفعل الرئيسي: قياسي + ed أو شاذ يُحفظ
+٣. did فعل مساعد في النفي والاستفهام فقط
+٤. إذا كان فعل الجملة (كينونة) فلا نستعمل did`,
+ en:`We watched TV last night.
+Ahmed went to school yesterday.
+He didn't play tennis yesterday.
+Did he play tennis yesterday?
+He was happy → He was not happy.
+They were students → Were they students?
+Zaid (be) in Iraq. → Zaid was in Iraq.`,
+ tr:`شاهدنا التلفاز ليلة أمس.\nأحمد ذهب إلى المدرسة أمس.\nلم يلعب التنس أمس.\nكان سعيداً → لم يكن سعيداً.`,
+ src:"ملزمة الوحدات 1–4 ص 6–7"},
+
+"past-continuous":{t:"Past Continuous",ar:"الماضي المستمر",u:1,
+ rule:`يستخدم للتعبير عن حدث بدأ في وقت معين واستمر لفترة حتى انتهى في الماضي.
+
+الإثبات: She/He/It + was + Ving + c.
+         They/You/We/I + were + Ving + c.
+النفي: was not/were not + Ving
+السؤال: Was/Were + فاعل + Ving + ؟
+
+ملاحظات:
+١. النفي: نضع not بعد الفعل المساعد (was/were)
+٢. الاستفهام: نغير مكان الكينونة إلى بداية الجملة قبل الفاعل
+٣. الماضي المستمر = حدث طويل مستمر
+   الماضي البسيط = حدث قصير مفاجئ
+
+ربط الأزمنة:
+While/As + ماضٍ مستمر , ماضٍ بسيط
+When + ماضٍ بسيط , ماضٍ مستمر
+While/As + ماضٍ مستمر + when/and + ماضٍ بسيط`,
+ en:`While I was reading a book, the phone rang.
+She was cooking dinner when the guests arrived.
+They were playing football when it started to rain.
+While Ali was having a shower, somebody knocked at the door.
+I was thinking about you and then you rang me.
+A thief took our clothes while we were swimming.`,
+ tr:`بينما كنت أقرأ كتاباً، رن الهاتف. (طويل + قصير مفاجئ)\nكانت تطبخ العشاء عندما وصل الضيوف.\nبينما كان علي يستحم، دق أحد الباب.`,
+ src:"ملزمة الوحدات 1–4 ص 5–8"},
+
+"adjectives-ed-ing":{t:"Adjectives -ed / -ing",ar:"الصفات المنتهية بـ ed و ing",u:1,
+ rule:`الصفات التي تنتهي بـ (ed): للتعبير عن الشعور أو الإحساس (الذي يشعر به الشخص نفسه)
+الصفات التي تنتهي بـ (ing): لتصف السبب (الشيء أو الشخص الذي تسبب في هذا الشعور)
+
+طريقة الحل:
+أ. إذا كان الفاعل غير عاقل (film/thing/animal) → نختار -ing
+ب. إذا كان الفاعل عاقل:
+   • بعد الاختيارات اسم → نختار -ing
+   • بعد الاختيارات ليس اسم (when / . / with / because / in / at) → نختار -ed
+
+أمثلة مهمة:
+boring / bored  |  exciting / excited  |  frightening / frightened
+interesting / interested  |  tiring / tired  |  annoying / annoyed`,
+ en:`She is not very interested in fashion. (شخص → يشعر)
+I saw a very exciting film on TV last night. (فيلم → سبب)
+The book is very boring. (كتاب → سبب)
+We were very frightened when our car broke down. (نحن → نشعر)
+He's a very interesting person. (شخص → يثير اهتماماً)`,
+ tr:`هي غير مهتمة كثيراً بالأزياء.\nرأيت فيلماً مثيراً للغاية.\nالكتاب ممل جداً.\nكنا خائفين جداً حين تعطلت سيارتنا.`,
+ src:"ملزمة الوحدات 1–4 ص 13–14"},
+
+"adjectives-ful-fully":{t:"Adjectives -ful / Adverbs -fully",ar:"الصفات والظروف: ful / fully",u:1,
+ rule:`الصفات المنتهية بـ -ful: تصف الاسم
+   مثل: beautiful / wonderful / peaceful / helpful / careful
+   موقعها: بعد فعل الكينونة أو قبل الاسم
+   وغالباً قبلها: very / too / quite
+
+الظروف المنتهية بـ -fully أو -ly: تصف الفعل (النشاط)
+   مثل: beautifully / peacefully / carefully / successfully
+   موقعها: في نهاية الجملة أو قبل الفعل الرئيسي
+   لا يكون خلف الظرف اسم (بخلاف الصفة)`,
+ en:`Sentences with adjectives (-ful):
+Yesterday, we had a wonderful dinner.
+This is a beautiful painting.
+She gave me a helpful explanation.
+
+Sentences with adverbs (-fully):
+She spoke beautifully during the ceremony.
+He explained the topic helpfully.
+After many tries, we did the experiment successfully.`,
+ tr:`أمس، تناولنا عشاءً رائعاً. (صفة تصف الاسم dinner)\nتكلمت بجمال خلال الحفل. (ظرف يصف الفعل spoke)`,
+ src:"ملزمة الوحدات 1–4 ص 15–16"},
+
+"phrasal-verbs":{t:"Phrasal Verbs",ar:"الأفعال المركبة",u:1,
+ rule:`الفعل المركب = فعل + حرف جر (verb + preposition)
+يختلف معناه عن الفعل العادي: give (يعطي) ≠ give up (يتخلى عن)
+
+أمثلة على حروف الجر: in / up / on / down / at / off
+
+قاعدة المفعول به:
+• إذا كان المفعول به اسم → يجوز كتابته بعد الفعل أو بعد حرف الجر:
+  turn the music down  //  turn down the music  ✓ كلاهما صحيح
+• إذا كان المفعول به ضمير → يجب كتابه بين الفعل وحرف الجر:
+  turn it down ✓   /   turn down it ✗`,
+ en:`give up = يتخلى عن / يقلع عن
+take up = يبدأ هواية / يمتهن
+try on = يجرب (ملابس)
+turn down = يخفض الصوت
+turn on = يشغّل
+work out = يحسب / يحل
+pick up = يلتقط / يستقل
+throw away = يتخلص من
+
+Examples:
+Smoking is terrible. You should give it up. (ضمير → بين الفعل وحرف الجر)
+When did you take up stamp-collecting? (اسم → بعد الفعل)
+When did you take stamp-collecting up? (اسم → بعد حرف الجر)
+Can I try them on? (ضمير → بين الفعل وحرف الجر)`,
+ tr:`give up = يتخلى عن / take up = يبدأ هواية / try on = يجرب\nturn down = يخفض / turn on = يشغّل`,
+ src:"ملزمة الوحدات 1–4 ص 17–19"},
+
+"prefixes":{t:"Prefixes (un- / in- / im- / il- / ir- / dis-)",ar:"البوادئ — المعنى المعاكس",u:1,
+ rule:`لتكوين معنى معاكس للصفة، نضع أحد البوادئ أمامها:
+
+un-  → يضاف إلى: happy, healthy, fair, usual, kind, safe, lucky...
+in-  → يضاف إلى صفات تبدأ بـ (a/c/d/e): active, correct, complete, expensive...
+im-  → يضاف إلى صفات تبدأ بـ (p/m): polite, possible, patient, moral, mature...
+il-  → يضاف إلى صفات تبدأ بـ (l): legal, logical, literate, legible...
+ir-  → يضاف إلى صفات تبدأ بـ (r): regular, responsible, relevant, rational...
+dis- → disapprove, disagree, disadvantage`,
+ en:`legal → illegal        logical → illogical
+regular → irregular    responsible → irresponsible
+moral → immoral        polite → impolite
+patient → impatient    possible → impossible
+correct → incorrect    convenient → inconvenient
+happy → unhappy        healthy → unhealthy
+fair → unfair          usual → unusual`,
+ tr:`قانوني → غير قانوني / منتظم → غير منتظم / مهذب → غير مهذب\nممكن → مستحيل / صحيح → غير صحيح / عادل → ظالم`,
+ src:"ملزمة الوحدات 1–4 ص 20–22"},
+
+"quantity":{t:"Quantity — Much / Many / Few / Little",ar:"أدوات الكمية",u:1,
+ rule:`مع الاسم المعدود (Countable = له جمع، يُعدّ):
+  many = كثير من (أسماء معدودة) — في النفي والاستفهام
+  a few = عدد قليل (إيجابي: يوجد شيء ما)
+  few = عدد قليل جداً (سلبي: لا يكاد يوجد)
+
+مع الاسم غير المعدود (Uncountable = لا جمع له):
+  much = كمية كثيرة — في النفي والاستفهام
+  a little = كمية قليلة (إيجابي: يوجد شيء ما)
+  little = كمية قليلة جداً (سلبي: لا يكاد يوجد)
+
+some/any: يستخدمان مع كليهما
+  some = في الإثبات / any = في النفي والاستفهام
+  enough = كافٍ / plenty of = وفرة من / a lot of = الكثير من
+
+طريقة الحل: انظر للكلمة بعد الفراغ:
+  اسم معدود → اختر many / few
+  اسم غير معدود → اختر much / little
+  كلمة more بعد الفراغ → تُجاهل، انظر ما بعدها`,
+ en:`How much sleep did you get last night? (sleep = uncountable)
+How many meals do you eat a day? (meals = countable)
+We need a few more oranges. (oranges = countable)
+We need a little more fruit. (fruit = uncountable)
+How much exercise does he take a week? (exercise = uncountable)
+I've met her a few times. (times = countable)
+There's only a little orange juice left. (juice = uncountable)`,
+ tr:`كم ساعة نمت الليلة الماضية؟ (نوم = غير معدود)\nكم وجبة تأكل في اليوم؟ (وجبات = معدودة)\nنحتاج بعض البرتقال بعد. / نحتاج بعض الفاكهة بعد.`,
+ src:"ملزمة الوحدات 1–4 ص 25–29"},
+
+"imperative":{t:"Imperative — Use an imperative to give advice",ar:"الجملة الأمرية — النصيحة",u:1,
+ rule:`الجملة الأمرية (Imperative): تبدأ بفعل مصدر مجرد.
+تُستخدم لإعطاء النصائح والأوامر والتعليمات.
+
+للنفي (النهي / الامتناع): نضع don't أو never في بداية الجملة.
+
+مثال التحويل:
+An average of eight hours a night is about right.
+→ Get enough sleep. (أمر إيجابي)
+
+If you do, ask a doctor for help with giving it up.
+→ Don't smoke. (أمر نفي)`,
+ en:`Get enough sleep.
+Eat a balanced diet.
+Never miss breakfast.
+Take some exercise every day.
+Drink plenty of water.
+See the dentist for regular checkups.
+Don't drink too much coffee.
+Don't smoke.
+Look after your eyes.
+Be safe when you travel.`,
+ tr:`احصل على نوم كافٍ. / تناول غذاءً متوازناً.\nلا تفوّت وجبة الإفطار أبداً. / تمرّن يومياً.\nاشرب كفايتك من الماء. / لا تدخّن.`,
+ src:"ملزمة الوحدات 1–4 ص 24–25"},
+
+"used-to":{t:"Used to / Didn't use to",ar:"used to — العادات الماضية",u:1,
+ rule:`تستخدم للتعبير عن عادة أو حالة كانت موجودة في الماضي ولم تعد موجودة.
+
+الإثبات: S + used to + المصدر
+النفي: S + didn't use to + المصدر (بدون d في use)
+السؤال: Did + S + use to + مصدر + ؟
+
+ملاحظات حول الحل:
+١. عند وجود (but now) في وسط الجملة → العبارة الثانية بالمضارع البسيط
+   قاعدة 1: S + used to + V + but now + S + V (مضارع)
+٢. عند وجود (but) في وسط الجملة → العبارة الثانية بالماضي البسيط
+   قاعدة 2: S + used to + V + but + S + V (ماضٍ)
+٣. الدلائل الزمنية: always/usually/sometimes/often/never + at.../every day...`,
+ en:`Huda: Which TV programmes did you use to watch when you were little?
+Grandmother: We didn't use to sit watching a box!
+We used to do more active things.
+We used to help mother with the housework.
+Did you use to go out with your friends?
+We used to go shopping in the souqs.
+
+He used to have his hair cut, but now his wife cuts it. (but now → present)
+I used to have a bicycle, but someone stole it last month. (but → past)
+She used to wear glasses, but now she has contact lenses.
+She didn't use to talk so much, but now she never stops talking.
+Cities didn't use to be polluted.`,
+ tr:`هدى: ما البرامج التي كنت تشاهدينها؟\nجدتي: لم نكن نجلس أمام التلفاز! كنا نقوم بأشياء نشطة.\nكنا نساعد الأم في أعمال المنزل.`,
+ src:"ملزمة الوحدات 1–4 ص 30–51"},
+
+"comparative":{t:"Comparative & Superlative — قواعد المقارنة",ar:"الصفة المقارنة والتفضيل",u:1,
+ rule:`قواعد تحويل الصفة إلى مقارنة (Comparative):
+١. صفة ذات مقطع واحد → أضف er:   fast → faster
+٢. صفة تنتهي بحرف صحيح + حرف علة + حرف صحيح → ضاعف الأخير + er:   hot → hotter
+٣. صفة تنتهي بـ y → قلب y إلى i + er:   funny → funnier
+٤. صفة تنتهي بـ e → أضف r فقط:   nice → nicer
+٥. صفة من أكثر من مقطع → more + صفة:   more interesting
+
+الشاذة: good→better / bad→worse / little→less / much→more / far→farther
+
+للتفضيل (Superlative): the + صفة + est  أو  the most + صفة
+
+صيغة المقارنة مع used to:
+قاعدة 1: الاسم + is/are + صفة مقارنة + than + ضمير الاسم + used to be
+قاعدة 2: الاسم + isn't/aren't + as + صفة عادية + as + ضمير الاسم + used to be`,
+ en:`Life is faster now than it used to be.
+Life isn't as easy as it used to be.
+Streets are more dangerous than they used to be.
+Streets aren't as clean as they used to be.
+Doctors are better trained than they used to be.
+Doctors aren't as cheap as they used to be.
+Films are more violent than they used to be.`,
+ tr:`الحياة الآن أسرع مما كانت عليه.\nالحياة ليست سهلة كما كانت.\nالشوارع أكثر خطورة مما كانت عليه.`,
+ src:"ملزمة الوحدات 1–4 ص 34–36"}
+,"mustn't-needn't":{t:"Mustn't vs Needn't / Don't have to",ar:"ألا تفعل (منع) مقابل عدم الضرورة",u:2,
+ rule:`الفرق الجوهري بين الصيغتين:
+• mustn't (must not): منع منع مطلق والعقوبة واردة
+• needn't / don't have to: ليست هناك ضرورة ولا هناك عقوبة
+
+الصيغة: فاعل + mustn't + مصدر  ·  فاعل + needn't + مصدر  ·  فاعل + don't/doesn't have to + مصدر
+
+ملاحظات:
+١. مضاد must (الضرورة) في النفي يكون needn't لا mustn't
+٢. للماضي: didn't need to + مصدر
+٣. الحظر في القانون واللوائح يستخدم mustn't كثيراً: law and order`,
+ en:`Visitors mustn't smoke inside the hospital.
+You mustn't tell anybody the password.
+You needn't pay now. You can pay later.
+We needn't hurry. The bus is late.
+She doesn't have to wear a uniform.`,
+ tr:`يُمنع على الزوار التدخين داخل المستشفى.
+ألا تخبر أحداً بكلمة المرور.
+لا داعي للدفع الآن؛ يمكنك الدفع لاحقاً.
+لا داعي للاستعجال، الحافلة متأخرة.`,
+ src:"ملزمة الوحدات 2 و6 — Law and order / Money and banking"},
+
+"should":{t:"Should — للنصيحة والواجب",ar:"المودال: ينبغي / لا ينبغي",u:2,
+ rule:`الصيغة: فاعل + should / shouldn't + مصدر الفعل
+
+الاستخدامات:
+١. إعطاء نصيحة: You should see a doctor.
+٢. وصف الواجب أو الصواب: Students should respect their teachers.
+٣. النصيحة بالترك من شيء: You shouldn't drive fast.
+
+ملاحظات:
+١. لا يتغير مع الضمائر أبداً (لا إضافة s)
+٢. بعده مصدر مجرد بدون to
+٣. بديله الرسمي: ought to + مصدر
+٤. في النصيحة الشرطية: If you feel dizzy, you should sit down.`,
+ en:`You should eat more vegetables.
+He shouldn't smoke. It is bad for his health.
+Should I apologise? — Yes, you should.
+We ought to check the prices before we buy.
+What should I wear at the interview?`,
+ tr:`ينبغي أن تأكل المزيد من الخضار.
+لا ينبغي له أن يدخّن؛ فهو ضار بصحته.
+هل ينبغي أن أعتذر؟ نعم ينبغي.
+يستحسن أن نتحقق من الأسعار قبل الشراء.`,
+ src:"ملزمة الوحدات 2 و6 — Law and order / Money and banking"},
+
+"present-perfect":{t:"Present Perfect",ar:"المضارع التام",u:2,
+ rule:`الصيغة: فاعل + have/has + التصريف الثالث (V3)
+
+الاستخدامات:
+١. حدث وقع للتو ونتيجته حاضرة: He has just arrived.
+٢. خبرة حياتية بلا زمن محدد: I have never been to London.
+٣. حدث بدأ في الماضي وما زال مستمراً مع since/for: We have lived here since 2020.
+
+الكلمات الدالة: just / already / yet / ever / never / since / for / recently / so far
+
+الفرق عن الماضي البسيط:
+• مع زمن محدد (yesterday, last week, ago) → Past Simple
+• بلا زمن محدد أو مع since/for → Present Perfect`,
+ en:`I have just finished my homework.
+She has already cooked dinner.
+Have you ever visited Baghdad?
+He has never eaten sushi.
+They have known each other for ten years.
+I saw him yesterday. (زمن محدد → Past Simple)`,
+ tr:`أنهيتُ واجبي للتو.
+طبخت العشاء أصلاً.
+هل زرت بغداد يوماً؟
+لم يأكل السوشي أبداً.
+يعرف كل منهما الآخر منذ عشر سنوات.`,
+ src:"ملزمة الوحدة 2 — Law and order"},
+
+"first-conditional":{t:"First Conditional",ar:"الشرط الأول — احتمال واقعي في المستقبل",u:3,
+ rule:`الصيغة: If + مضارع بسيط , will + مصدر
+
+الشرح: لحدث ممكن وواقعي في المستقبل.
+
+ملاحظات:
+١. لا نستخدم will بعد If أبداً
+٢. يمكن استبدال will بأمر (imperative): If it rains, stay at home.
+٣. بديل If:  unless = إذا لم  ·  as soon as / when
+٤. يمكن قلب الترتيب: I will help you if you ask me politely.`,
+ en:`If you study hard, you will pass the exam.
+If it rains tomorrow, we won't go on a picnic.
+I'll call you as soon as I arrive.
+If you touch that wire, you'll get a shock.
+Unless you hurry, you'll miss the bus.`,
+ tr:`إن درست بجد فستنجح في الامتحان.
+إذا أمطرت غداً فلن نذهب في نزهة.
+سأتصل بك بمجرد وصولي.
+إلا أن تستعجل فستفوتك الحافلة.`,
+ src:"ملزمة الوحدة 3 — Careers and choices"},
+
+"second-conditional":{t:"Second Conditional",ar:"الشرط الثاني — افتراض غير واقعي",u:3,
+ rule:`الصيغة: If + ماضٍ بسيط , would + مصدر
+
+الشرح: لشرط افتراضي في الحاضر أو المستقبل، احتماله ضعيف أو منعدم.
+
+ملاحظات:
+١. نستخدم were مع كل الضمائر إذا كان الفعل كينونة: If I were you, ...
+٢. يمكن استبدال would بـ could/might: If I had money, I could travel.
+٣. الحاضر الافتراضي يجيب عن سؤال: What would you do if...?`,
+ en:`If I were you, I would accept the offer.
+If we had a garden, we would grow tomatoes.
+If she spoke French, she would get the job.
+They would help us if we asked them politely.
+What would you do if you won a million?`,
+ tr:`لو كنتَ مكانك لتقبلت العرض.
+لو كان لنا حديقة لزرنا الطماطم.
+لو كانت تتحدث الفرنسية لوجدت العمل.
+ماذا ستفعل لو ربحت مليوناً؟`,
+ src:"ملزمة الوحدة 3 — Careers and choices"},
+
+"third-conditional":{t:"Third Conditional",ar:"الشرط الثالث — الماضي غير المحقق",u:3,
+ rule:`الصيغة: If + had + V3 , would have + V3
+
+الشرح: لشرط لم يقع في الماضي فنتيجته لم تتحقق. يُستخدم كثيراً في الندم والتأمل.
+
+ملاحظات:
+١. لا يمكن تغيير النتيجة — إنها استعراض للماضي فقط
+٢. الندم: If you had studied, you wouldn't have failed.
+٣. يمكن استبدال would have بـ could have / might have`,
+ en:`If you had told me, I would have helped you.
+If he hadn't driven so fast, he wouldn't have had an accident.
+I would have passed the test if I had studied harder.
+If they had left earlier, they might have caught the plane.`,
+ tr:`لو أخبرتني لكنت ساعدتك.
+لو لم يقُد بسرعة ذلك ما اصطدم.
+لنجحت في الاختبار لو درست بجد أكبر.
+لو غادروا أبكراً لعسيتم أن يلحقوا بالطائرة.`,
+ src:"ملزمة الوحدة 3 — Careers and choices"},
+
+"causative":{t:"Causative — have/get something done",ar:"التعليّل: أن تجعل غيرك ينفّذ الفعل",u:4,
+ rule:`المقصد: لم تُنفّذ الفعل بنفسك بل أجعلت شخصاً آخر (أو مركزاً) ينفّذه لك.
+
+الصيغ:
+١. have + المفعول + V3:  I had my car repaired.
+   (have يتغير حسب الزمن: am having / had / will have)
+٢. get + المفعول + V3 (أكثر عامية):  She got her hair cut.
+٣. make/let + مفعول + مصدر مجرد:
+   The teacher made us rewrite the essay.
+   His father let him go on the trip.
+   make = يجبر — بعد المفعول مصدر مجرد
+   let = يسمح — بعد المفعول مصدر مجرد أيضاً`,
+ en:`I had my car repaired last weekend.
+She will have her photo taken tomorrow.
+They got the house painted before the party.
+The teacher made the students rewrite the essay.
+His father let him go on the trip.`,
+ tr:`صلّحتُ سيارتي — أي جعلت غيري يصلحها — نهاية الأسبوع الماضي.
+ستلتقط صورتها غداً (عند مصوّر).
+دهنوا الفيلا قبل الحفل (عطّالوا دهّاناً).
+جعل المدرّس الطلبة يعيدون كتابة المقال.
+سمح له أبوه بالذهاب في الرحلة.`,
+ src:"ملزمة الوحدة 4 — Rashid & Rana Designs"},
+
+"wish":{t:"Wish",ar:"التمنّي: أتمنى لو (كل شيء مستحيل)",u:4,
+ rule:`الصيغ الثلاث:
+١. wish + ماضٍ بسيط → حقيقة حالية مستحيلة: I wish I knew the answer. (لا أعرفه)
+٢. wish + had + V3 → الندم على الماضي: I wish I had studied. (لم أدرس)
+٣. wish + would → شكوى أو أمل بتغيُّر مستقبلي: I wish it would stop raining.
+
+ملاحظة: بعد wish نستخدم were مع كل الضمائر إذا كان الفعل كينونة.`,
+ en:`I wish I were taller.
+Sara wishes she had accepted the offer.
+I wish I had visited Babylon when I was in Iraq.
+Ahmed wishes his parents wouldn't smoking. → Ahmed wishes his father would give up smoking.`,
+ tr:`أتمنى لو كنت أطول.
+تتمنى سارة لو أنها قبلت العرض.
+أتمنى لو زرت بابل عندما كنت في العراق.
+يتمنى أحمد لو أن أباً له أقلع عن التدخين.`,
+ src:"ملزمة الوحدة 4 — Rashid & Rana Designs"},
+
+"passive":{t:"Passive Voice",ar:"المبني للمجهول — التحويل من المعلوم",u:5,
+ rule:`التحويل من المعلوم إلى المجهول: المفعول يصبح فاعلاً + be حسب الزمن + V3
+
+الجدول عبر الأزمنة:
+مضارع بسيط: am/is/are + V3
+ماضٍ بسيط: was/were + V3
+مضارع تام: have/has been + V3
+مستقبل: will be + V3
+فعل إضافي: must/should/can be + V3
+
+متى نستخدمه؟
+١. عندما يكون الفاعل غير مهم أو واضحاً من السياق
+٢. في الأخبار والإعلانات الرسمية
+
+للتنفيذ: من يقوم بالفعل يُذكر بعد by.`,
+ en:`The book was written in 1813.
+The classroom is cleaned every day.
+The letter will be sent tomorrow.
+The road is being repaired.
+The thief was caught by the police.
+Passive smoking must be banned.`,
+ tr:`كُتب الكتاب عام 1813.
+تُنظّف الصف كل يوم.
+سيُرسل الرسول غداً الطرد.
+الطريق قيد الإصلاح الآن.
+أُمسك اللص من قبل الشرطة.
+يُلزم حظر التدخين السلبي.`,
+ src:"ملزمة الوحدات 5 و8 — Tourism / Natural resources"},
+
+"relative":{t:"Relative Clauses",ar:"جمل الوصل الموصولة (who/which/that…)",u:5,
+ rule:`أدوات الوصل وتوظيفها:
+who → للعاقل (الشخص)
+which → لغير العاقل (الشيء/الحيوان)
+that → للعاقل وغيره (البديل الشائع)
+whose → للملكية
+where → للمكان
+when → للزمن
+
+ملاحظات:
+١. الوصل التعريفي يحدد المرجع: The man who lives next door is a doctor.
+٢. الوصل غير التعريفي بين فاصلتين للمزيد دون تحديد: My car, which is very old, still works.
+٣. أدوات الوصل تحل محل الضمير: نقول The book which I read لا The book I read it.`,
+ en:`The book which I read was amazing.
+The scientist who discovered the vaccine won a prize.
+The boy whose father is a doctor is my friend.
+This is the house where I was born.
+She spoke to the person that managed the shop.`,
+ tr:`الكتاب الذي قرأته كان مذهلاً.
+العالمة التي اكتشفت اللقاح كُوفئت بجائزة.
+الولد الذي أبوه طبيب صديقي.
+هذا هو البيت الذي وُلدت فيه.
+هنأت المرور بالشخص الذي يدير المتجر.`,
+ src:"ملزمة الوحدة 5 — Tourism and holidays"},
+
+"gerund":{t:"Gerund — Ving",ar:"الاسم الفعلي (إضافة ing)",u:7,
+ rule:`الاسم الفعلي = الفعل + ing ويستخدم كاسم.
+
+الاستخدامات:
+١. بعد حروف الجر دائماً: He is interested in learning English.
+٢. كمبتدأ الجملة: Smoking is dangerous.
+٣. بعد أفعال معينة: enjoy / finish / avoid / mind / keep / suggest / practise / continue
+٤. بعد go للأنشطة الترفيهية: go shopping / go swimming
+٥. بعد العبارات الأدبية: Do you mind opening the window?
+
+المقارنة مع المصدر (to + مصدر):
+هناك أفعال تقبل الصيغتين بالمعنى نفسه: like / love / hate / start / begin`,
+ en:`Swimming is good exercise.
+Thank you for helping me.
+He finished doing his homework.
+Do you mind waiting a few minutes?
+She avoided answering the question.
+I like reading and I like to read.`,
+ tr:`السباحة رياضة مفيدة.
+شكراً لمساعدتي لي.
+أنهى أداء واجبه.
+هل تمانع الانتظار بضع دقائق؟
+تجنّبت الإجابة عن السؤال.
+أحب القراءة وأحب أن أقرأ. — الصيغتان بنفس المعنى.`,
+ src:"ملزمة الوحدة 7 — Education and learning"}
+};
+
+// ═══════════════════════════════════════
+// UNIT 1 — COMPLETE DATA
+// ═══════════════════════════════════════
+const U1={
+ n:1,t:"Health and lifestyle",ar:"الصحة وأسلوب الحياة",
+ gr:["past-simple","past-continuous","adjectives-ed-ing","adjectives-ful-fully",
+     "phrasal-verbs","prefixes","quantity","imperative","used-to","comparative"],
+ lessons:[
+  {t:"My toe is bleeding",p:4,ar:"إصبع قدمي ينزف"},
+  {t:"I was ice-skating and I fell over",p:6,ar:"كنت أتزحلق على الجليد وسقطت"},
+  {t:"My friends were all watching",p:8,ar:"كان أصدقائي يشاهدون"},
+  {t:"Most smokers take it up as teenagers",p:10,ar:"معظم المدخنين يبدؤون في المراهقة"},
+  {t:"Take some exercise every day",p:12,ar:"مارس بعض التمارين يومياً"},
+  {t:"Life used to be different",p:14,ar:"كانت الحياة مختلفة"},
+  {t:"Let's start with a diet",p:16,ar:"لنبدأ حمية غذائية"},
+  {t:"Using your phone behind the wheel",p:18,ar:"استخدام الهاتف أثناء القيادة"},
+  {t:"Against all odds",p:20,ar:"رغم الصعوبات — قصة نجلة عماد"}
+ ],
+ vocab:[
+  // Lesson 1 — My toe is bleeding
+  {l:"Lesson 1",words:[
+   {w:"bleeding",m:"نزيف / يتدمى"},{w:"shoulder",m:"كتف"},{w:"knee",m:"ركبة"},
+   {w:"elbow",m:"مرفق"},{w:"ankle",m:"كاحل"},{w:"wrist",m:"معصم / رسغ"},
+   {w:"broken",m:"مكسور"},{w:"fracture",m:"كسر / فراكتشر"},{w:"hurt",m:"يؤذي / يؤلم (فعل)"},
+   {w:"sore",m:"ملتهب / مؤلم (صفة)"},{w:"pain",m:"ألم (اسم)"},
+   {w:"sneeze",m:"يعطس"},{w:"dizzy",m:"دوار / يشعر بالدوار"},
+   {w:"swallow",m:"يبلع"},{w:"faint",m:"يُغمى عليه"},{w:"cough",m:"يسعل"},
+   {w:"breathe",m:"يتنفس"},{w:"bleeding",m:"نزيف / يتدمى"},
+   {w:"pills",m:"حبوب"},{w:"plaster",m:"جبس / لصقة"},
+   {w:"medicine",m:"دواء / طب"},{w:"cream",m:"مرهم / كريم"},
+   {w:"bandage",m:"ضماد"},{w:"treatment",m:"علاج / معالجة"},
+   {w:"stomach",m:"معدة"},{w:"skin",m:"جلد"},{w:"heart",m:"قلب"},
+   {w:"bones",m:"عظام"},{w:"blood",m:"دم"},
+  ]},
+  // Lesson 2
+  {l:"Lesson 2",words:[
+   {w:"ice-skating",m:"التزلج على الجليد"},{w:"emergency",m:"طوارئ"},
+   {w:"accident",m:"حادث"},{w:"probably",m:"على الأرجح"},
+   {w:"suggest",m:"يقترح"},{w:"fall over",m:"يسقط"},
+   {w:"X-Ray",m:"أشعة إكس"},{w:"details",m:"تفاصيل"},
+   {w:"keep on",m:"يستمر / يبقى"},{w:"guess",m:"يخمن"},
+  ]},
+  // Lesson 3
+  {l:"Lesson 3",words:[
+   {w:"exoskeleton",m:"هيكل خارجي آلي"},{w:"therapy",m:"علاج / تأهيل طبي"},
+   {w:"progress",m:"تقدم / تحسن"},{w:"upset",m:"مبعج / محبط"},
+   {w:"recover",m:"يتعافى"},{w:"wheelchair",m:"كرسي متحرك"},
+   {w:"amazing",m:"مذهل"},{w:"motivated",m:"متحفز"},
+   {w:"give up",m:"يستسلم"},{w:"determined",m:"مصمم / عازم"},
+   {w:"scary",m:"مخيف"},{w:"technology",m:"تقنية"},
+  ]},
+  // Lesson 4
+  {l:"Lesson 4",words:[
+   {w:"take up",m:"يبدأ / يمتهن (هواية)"},{w:"habit",m:"عادة"},
+   {w:"smoking",m:"التدخين"},{w:"anti-smoking",m:"ضد التدخين"},
+   {w:"approximately",m:"تقريباً"},{w:"measures",m:"تدابير"},
+   {w:"campaign",m:"حملة"},{w:"teenager",m:"مراهق"},
+   {w:"smoker",m:"مدخن"},{w:"illegal",m:"غير قانوني"},
+   {w:"unfair",m:"غير عادل / ظالم"},{w:"give up",m:"يترك / يقلع عن"},
+  ]},
+  // Lesson 5
+  {l:"Lesson 5",words:[
+   {w:"vaccination",m:"لقاح / تطعيم"},{w:"tip",m:"نصيحة"},
+   {w:"try on",m:"يجرب (ملابس)"},{w:"unhealthy",m:"غير صحي"},
+   {w:"unusual",m:"استثنائي / فريد"},{w:"unfortunate",m:"قليل الحظ"},
+   {w:"unpleasant",m:"بغيض / مكروه"},{w:"inefficient",m:"غير فعال"},
+   {w:"impolite",m:"غير مهذب / فظ"},
+  ]},
+  // Lesson 6
+  {l:"Lesson 6",words:[
+   {w:"freedom",m:"حرية"},{w:"poverty",m:"فقر"},{w:"population",m:"كثافة سكانية"},
+   {w:"health service",m:"خدمات صحية"},{w:"nowadays",m:"في الوقت الحاضر"},
+   {w:"tractor",m:"جرافة"},{w:"cart",m:"عربة"},{w:"rude",m:"وقح"},
+   {w:"entertainment",m:"تسلية"},{w:"education",m:"تعليم"},
+  ]},
+  // Lesson 7
+  {l:"Lesson 7",words:[
+   {w:"diet",m:"النظام الغذائي / حمية"},{w:"diabetics",m:"المصابون بالسكري"},
+   {w:"overweight",m:"يعاني من زيادة الوزن"},{w:"regular",m:"منتظم"},
+   {w:"lungs",m:"الرئتان"},{w:"non-smokers",m:"غير المدخنين"},
+   {w:"healthcare",m:"الرعاية الصحية"},{w:"responsibility",m:"المسؤولية"},
+   {w:"bad habits",m:"العادات السيئة"},{w:"fat",m:"الدهون"},
+  ]},
+  // Lesson 8
+  {l:"Lesson 8",words:[
+   {w:"distract",m:"يشتت الانتباه"},{w:"distraction",m:"تشتيت الانتباه"},
+   {w:"prevent",m:"يمنع"},{w:"accidents",m:"الحوادث"},
+   {w:"hands-free",m:"بدون استخدام اليدين"},{w:"navigation apps",m:"تطبيقات الملاحة"},
+   {w:"break the law",m:"مخالفة القانون"},{w:"punished",m:"معاقب"},
+   {w:"licence",m:"رخصة قيادة"},{w:"risk",m:"خطر"},
+   {w:"permanently banned",m:"محظور دائماً"},
+  ]},
+  // Lesson 9
+  {l:"Lesson 9",words:[
+   {w:"Paralympics",m:"الألعاب البارالمبية"},{w:"prostheses",m:"الأطراف الصناعية"},
+   {w:"determination",m:"العزيمة"},{w:"resolve",m:"الإصرار"},
+   {w:"champion",m:"البطل"},{w:"gold medal",m:"الميدالية الذهبية"},
+   {w:"survived",m:"نجت من"},{w:"disaster",m:"الكارثة"},
+   {w:"table tennis",m:"تنس الطاولة"},{w:"racket",m:"مضرب"},
+  ]},
+ ],
+ exercises:[
+  {lbl:"A",les:"Lesson 1 — Match symptoms",p:4,
+   txt:`اختر الوصف الصحيح لكل موقف:
+
+1. I've got a broken leg. → I fractured it in a motorbike accident.
+2. I've got a terrible headache. → Can I have some painkillers?
+3. I've got a sore throat. → It hurts so much that I can't swallow.
+4. My toe is bleeding. → I cut it on a piece of glass on the beach.
+5. I feel dizzy. → I need to lie down.
+6. I burnt my finger on the oven.
+7. I have a temperature of 39.
+8. I twisted my ankle playing football.`},
+  {lbl:"B",les:"Lesson 1 — Vocab Groups",p:4,
+   txt:`اكتب الكلمات الآتية في المجموعة الصحيحة:
+pills / plaster / medicine / cream / bandage / wrist / shoulder / knee / elbow / ankle / swallow / sneeze / faint / cough / breathe / stomach / skin / heart / bones / blood
+
+Treatment:   pills, plaster, medicine, cream, bandage
+Joints:       wrist, shoulder, knee, elbow, ankle
+Verbs:        swallow, sneeze, faint, cough, breathe
+Inside & outside the body: stomach, skin, heart, bones, blood`},
+  {lbl:"C",les:"Lesson 1 — Vocab sentences",p:5,
+   txt:`أكمل كل جملة بكلمة من الصندوق (bleeding / broken / hurt / pain / sick / sore / dizzy / sneeze):
+
+1. "Have you got a cold?" "No, I always sneeze when I put pepper on my food."
+2. He was sick three times in the night.
+3. She cut her hand and it was bleeding a lot, so she went to hospital.
+4. My back hurts all the time.
+5. She can't play tennis. She has broken her right arm.
+6. I went swimming and now my eyes are sore.
+7. Where exactly is the pain and how long have you had it?
+8. It was very hot and she felt dizzy during the lesson.`},
+  {lbl:"D",les:"Lesson 2 — Past Continuous (B)",p:7,
+   txt:`Put one verb in Past Continuous and one in Past Simple:
+
+1. I (think) about you and then you (ring) me.
+→ was thinking / rang
+2. While Ali (have) a shower, somebody (knock) at the door.
+→ was having / knocked
+3. I (clean) my room and I (find) £30 under my bed.
+→ was cleaning / found
+4. Luckily, Reema (not drive) very fast when the child (run) into the road.
+→ was not driving / ran
+5. A thief (take) our clothes while we (swim).
+→ took / were swimming
+6. She (tell) us to be quiet as we (make) too much noise.
+→ told / were making
+7. My sister (hide) my purse under the bed while I (not look).
+→ hid / was not looking
+8. As she (carry) the shopping, my grandmother (slip) and (break) her ankle.
+→ was carrying / slipped / broke`},
+  {lbl:"E",les:"Lesson 2 — Past Continuous (C)",p:8,
+   txt:`Complete these sentences with your own ideas. Put verbs in past simple:
+
+1. I was running, and I fell down.
+2. I wasn't looking where I was going, and I hit a tree.
+3. I was getting ready for school when the power went out.
+4. My little brother was playing football when he broke a window.
+5. I was thinking about my weekend when the teacher suddenly asked me a question.
+6. While I was waiting for the bus, it started to rain.`},
+  {lbl:"F",les:"Lesson 2 — Past Continuous أسئلة وزارية",p:9,
+   txt:`أسئلة وزارية — اختر الصحيح:
+
+1. She (walked/was walking) home from school when she heard the police siren.
+→ was walking
+2. Khaled was playing football when he (breaks/broke) his ankle.
+→ broke
+3. I was sitting in the park ……. somebody kicked the ball at me. (where/while/when)
+→ when
+4. We were driving to the beach when we (hear/heard) a loud crash.
+→ heard
+5. A thief took our clothes as we (swim). → were swimming
+6. She told us to be quiet as we (make) too much noise. → were making
+7. I (sit) in the park when someone kicked a ball at me. → was sitting
+8. My cousin hid my purse while I (not look). → wasn't looking
+9. While he (skate), he fell over. → was skating
+10. While Ali (have) a shower, somebody (knock) the front door.
+→ was having / knocked
+11. She (cut) her hand while she (chop) vegetables.
+→ cut / was chopping
+12. As she (carry) the shopping, my grandmother slipped.
+→ was carrying
+13. While I (read) a story, I (hear) a strange noise.
+→ was reading / heard
+14. When I met her at the airport, Muna (wear) a long blue dress.
+→ was wearing
+15. I was eating breakfast and a bird (fly) into the kitchen.
+→ flew`},
+  {lbl:"G",les:"Lesson 3 — Adjectives -ed/-ing",p:9,
+   txt:`اختر الصحيح:
+
+1. She is not very (interested/interesting) in fashion. → interested
+2. I saw very (excited/exciting) film on TV last night. → exciting
+3. This book is very (bored/boring). → boring
+4. We were very (frightened/frightening) when our car broke down. → frightened
+5. He's a very (interested/interesting) person. → interesting
+
+أسئلة وزارية:
+1. The film was so (boring/bored) that I fell asleep. → boring
+2. The children cried because the film was (frightened/frightening). → frightening
+3. What is the most (exciting/excited) thing you have done? → exciting
+4. My flight was (tiring/tired) — it was 12 hours. → tiring
+5. I screamed when I saw that (frightened/frightening) animal. → frightening
+6. She was very (annoyed/annoying) with him for not telling the truth. → annoyed
+7. I'm (interesting/interested) in joining the club. → interested
+8. Everybody was (surprising/surprised) that he passed the exam. → surprised`},
+  {lbl:"H",les:"Lesson 3 — Adjectives -ful/-fully",p:9,
+   txt:`اختر الصحيح:
+
+1. This is a very (peaceful/peacefully) area of town. → peaceful (صفة + اسم area)
+2. You should always speak (respectful/respectfully) to older people. → respectfully (ظرف + فعل speak)
+3. Be (careful/carefully) when you cycle on the road. → careful (صفة بعد be)
+4. We managed to do the experiment (successful/successfully). → successfully (ظرف + فعل do)
+
+أسئلة وزارية:
+1. He drives the car (careful/carefully). → carefully
+2. We hope to live (peaceful/peacefully) together. → peacefully
+3. The film is (wonderful/wonderfully) directed. → wonderfully
+4. Sara (carefully/careful) lifted the box. → carefully
+5. The picture was (beautiful/beautifully) painted. → beautifully
+6. Tariq was floating (peaceful/peacefully). → peacefully`},
+  {lbl:"I",les:"Lesson 4 — Phrasal Verbs",p:11,
+   txt:`Put the verbs and objects in the correct order:
+
+1. Smoking is terrible. You should / give up / it.
+→ You should give it up. (ضمير → بين الفعل وحرف الجر)
+
+2. When did you / take up / stamp-collecting?
+→ When did you take up stamp-collecting?
+   When did you take stamp-collecting up? (اسم → كلاهما صحيح)
+
+3. I can't remember when I / took up / it.
+→ I can't remember when I took it up.
+
+4. I like these shoes. Can I / try on / them?
+→ Can I try them on.
+
+5. Can you / turn down / the music?
+→ Can you turn down the music? / Can you turn the music down?
+
+6. I'll / turn down / it / in a minute.
+→ I'll turn it down in a minute.
+
+أسئلة وزارية:
+1. I can't remember when I (took up it / took it up). → took it up
+2. I like these shoes. Can I (try on them / try them on)? → try them on
+3. Can you (turn it down / turn down it)? → turn it down
+4. I need a calculator. I can't (work out it / work it out). → work it out
+5. I'll (turn down it / turn it down) in a minute. → turn it down
+6. I've already (turn on it / turn it on). → turn it on
+7. Most smokers (take up it / take it up) as teenagers. → take it up`},
+  {lbl:"J",les:"Lesson 4 — Prefixes",p:11,
+   txt:`اكتب المعاكسات باستخدام البادئة الصحيحة:
+
+1. correct → incorrect     2. moral → immoral
+3. fair → unfair           4. efficient → inefficient
+5. fortunate → unfortunate 6. patient → impatient
+7. usual → unusual         8. polite → impolite
+9. healthy → unhealthy     10. dependent → independent
+11. convenient → inconvenient  12. pleasant → unpleasant
+
+أسئلة وزارية:
+like, dislike → legal, illegal
+polite, impolite → popular, unpopular
+fair, unfair → patient, impatient
+happy, unhappy → possible, impossible
+correct, incorrect → happy, unhappy
+healthy, unhealthy → moral, immoral`},
+  {lbl:"K",les:"Lesson 5 — Imperative to give advice",p:12,
+   txt:`أكمل الجملة الأمرية المناسبة:
+
+1. ……………an average of eight hours a night is about right.
+→ Get enough sleep.
+
+2. ………………it's the most important meal of the day.
+→ Never miss breakfast.
+
+3. ……………at least a litre and a half every day.
+→ Drink plenty of water.
+
+4. ………..Get them tested once a year.
+→ Look after your eyes.
+
+5. ………………Tea is better for your heart.
+→ Don't drink too much coffee.
+
+6. ……………And brush your teeth three times.
+→ See the dentist for regular checkups.
+
+7. ………………Make sure you are up to date with vaccinations.
+→ Be safe when you travel.
+
+8. ………………Ideally, do sport three times a week.
+→ Take some exercise every day.
+
+9. ………………If you do, ask a doctor for help giving it up.
+→ Don't smoke.`},
+  {lbl:"L",les:"Lesson 5 — Much/Many/Few/Little أسئلة وزارية",p:13,
+   txt:`اختر الصحيح:
+
+1. We need a (little/few) more fruit. → little (fruit = uncountable)
+2. We need a (little/few) more oranges. → few (oranges = countable)
+3. There isn't (much/little) time before the bus leaves. → much
+4. How (much/many) exercise does he take a week? → much
+5. The headmaster had (a little/a few) reports. → a few (reports = countable)
+6. I have got (a few/a little) work to finish. → a little (work = uncountable)
+7. How (much/many) food do we need? → much
+8. How (much/many) time do you spend on homework? → much
+9. How (many/much) apples do you need? → many
+10. How (many/much) time is left? → much
+11. We need (a little/a few) butter for this cake. → a little
+12. I've met her a (few/little) times. → few (times = countable)
+13. There isn't (many/much) space. → much (space = uncountable)
+14. You will have to wait a (little/few) minutes. → few
+15. There weren't (much/many) people at the meeting. → many
+16. How (many/much) hours' sleep did you get? → many
+17. There were a (few/little) people at the party. → few
+18. How (much/many) meals do you eat a day? → many
+19. There's only a (few/little) orange juice left. → little`},
+  {lbl:"M",les:"Lesson 6 — Used to (Part 1)",p:14,
+   txt:`Complete with the correct form of used to:
+
+Huda: Which TV programmes did you use to watch when you were little?
+Grandmother: We didn't have a TV — we used to do more active things.
+We didn't use to sit around watching a box!
+We used to help mother with the housework and cooking.
+Huda: How did you use to have fun?
+Grandmother: We used to play the drums and sing and dance.
+Families used to have real conversations in those days.
+Did you use to go out with your friends?
+Yes, we used to go shopping in the souqs.
+We used to talk about everything.
+We didn't use to walk around talking on mobile phones.`},
+  {lbl:"N",les:"Lesson 6 — Used to (Part 2) أسئلة وزارية",p:14,
+   txt:`أسئلة وزارية:
+
+1. Did you (use to / used to) fight with your brother when you were little? → use to
+2. She didn't (used to / use to) be so thin. → use to
+3. He used to (organize / organized) matches at the weekend. → organize
+4. He ……. (not buy) Armani clothes. → didn't use to buy
+5. Cities ……… (not be) polluted. → didn't use to be
+6. Girls (not go) to school. → didn't use to go
+7. How did you use to have fun? (How / you have / fun)
+8. Did girls use to go to school? (Girls / go to school?)
+9. Did you use to go to work by car?
+10. Which TV programmes did you use to watch when you were little?
+
+الجزء الثاني (but now / but):
+1. We (used to / didn't use to) have security cameras, but now we have six. → didn't use to
+2. She (not talk) so much, but now she never stops talking. → didn't use to talk
+3. He (have) hair cut at hairdresser's, but now his wife (cut) it. → used to have / cuts
+4. I (have) a bicycle, but someone (steal) it last week. → used to have / stole
+5. Salwa (eat) meat, but now she (be) a vegetarian. → used to eat / is
+6. She (not be) so thin, but she got very ill last year. → didn't use to be
+7. He (like) going out, but now he always (want) to stay at home. → used to like / wants
+8. I (drink) coffee, but now I drink tea. → used to drink
+9. Films (be) black and white, but now they are in colour. → used to be`},
+  {lbl:"O",les:"Lesson 6 — Comparatives أسئلة وزارية",p:15,
+   txt:`أسئلة وزارية:
+
+1. big, bigger; funny, funnier
+2. small, smaller; good, better
+3. big, bigger; expensive, more expensive
+4. fast, faster; cheap, cheaper
+5. big, bigger; dangerous, more dangerous
+6. fast, faster; easy, easier
+
+تطبيقات المقارنة مع used to:
+7. Families are not as (big/bigger) as they used to be. → big
+8. Life is not as (easy/easier) as it used to be. → easy
+9. Doctors are (good/better) trained than they used to be. → better
+10. Life is (fast/faster) now than it used to be. → faster
+11. Streets are (dangerous/more dangerous) than they used to be. → more dangerous
+12. Education is better than 50 years ago. (Use as…as instead of than)
+→ Education isn't as good as it used to be.
+
+Compare life today with life 50 years ago:
+Life: Life is faster now than it used to be. / Life isn't as easy as it used to be.
+Streets: Streets are more dangerous than they used to be. / aren't as clean.
+Doctors: Doctors are better trained than they used to be.
+Films: Films are more violent than they used to be.`},
+  {lbl:"P",les:"Lesson 7 — Reading Comprehension (A)",p:16,
+   txt:`اختر الجواب الصحيح بناء على المقالة:
+
+1. The government spends millions on
+→ b. people who have made themselves ill.
+
+2. Because of their bad diet, 60% of British people
+→ b. are overweight and could get diabetes.
+
+3. People
+→ a. no longer take enough exercise.
+
+4. Smoking
+→ c. is destroying a lot of people's health.
+
+5. The government shouldn't pay for people's healthcare
+→ a. unless they take proper care of themselves.`},
+  {lbl:"Q",les:"Lesson 9 — Najla Emad Reading (A)",p:20,
+   txt:`اقرأ القطعة وأجب عن الأسئلة:
+
+1. What did Najla like to do as a little girl?
+→ She liked to wait at her doorstep for her father to arrive from work.
+
+2. What happened to Najla as a result of the bomb attack?
+→ She lost much of her right arm and both legs.
+
+3. How did the Iraqi healthcare system help Najla?
+→ With the necessary treatments and medication.
+
+4. How did Najla's life change a second time?
+→ She discovered table tennis.
+
+5. Why did the prostheses help Najla play better?
+→ Because she could play standing.
+
+6. How did Najla win the Paralympic gold medal?
+→ She beat the Tokyo 2020 champion 3-1.
+
+7. What did Najla say before the Paralympics?
+→ "We can do anything with determination and resolve."
+
+MCQ (20/B):
+1. What did Najla want to do but couldn't anymore? → b. run around
+2. How old was Najla when she started table tennis? → b. 16
+3. When Najla earned a place in the Iraqi team, she started receiving → a. financial support.
+4. The prostheses allowed Najla to → a. play in a different position.
+5. Najla won the Paris Paralympic gold medal in → c. 2024`}
+ ],
+ meanings:[
+  // Lesson 1 Ministerial
+  {q:"joint in the arm, s…",a:"Shoulder"},
+  {q:"Inside the body, h…t",a:"heart"},
+  {q:"Joint, ankle // treatment, ……",a:"cream"},
+  {q:"Joint in the leg, A……",a:"Ankle"},
+  {q:"Joint in the arm",a:"Wrist"},
+  {q:"Ankle ; joints // bandage ; ……",a:"treatment"},
+  {q:"Cream ; medicine // ankle ; ……",a:"knee"},
+  // Adjectives
+  {q:"I saw a very ___ film. (exciting/excited)",a:"exciting"},
+  {q:"The film was so ___ I fell asleep. (boring/bored)",a:"boring"},
+  {q:"We were very ___ in the desert. (frightened/frightening)",a:"frightened"},
+  {q:"He's ___ person with great stories. (interesting/interested)",a:"interesting"},
+  {q:"I'm ___ in joining the club. (interesting/interested)",a:"interested"},
+  // Phrasal verbs
+  {q:"Smoking is terrible. You should give ___ it.",a:"give it up (ضمير → between verb and prep.)"},
+  {q:"I can't remember when I took ___ it.",a:"took it up"},
+  {q:"Can you turn ___ it?",a:"turn it down"},
+  // Prefixes
+  {q:"opposite of: legal",a:"illegal"},
+  {q:"opposite of: polite",a:"impolite"},
+  {q:"opposite of: patient",a:"impatient"},
+  {q:"opposite of: fair",a:"unfair"},
+  {q:"opposite of: correct",a:"incorrect"},
+  {q:"opposite of: healthy",a:"unhealthy"},
+  {q:"opposite of: possible",a:"impossible"},
+  {q:"opposite of: regular",a:"irregular"},
+  // Quantity
+  {q:"We need a ___ more fruit to the picnic. (little/few)",a:"little (fruit = uncountable)"},
+  {q:"We need a ___ more oranges. (little/few)",a:"few (oranges = countable)"},
+  {q:"How ___ exercise does he take? (much/many)",a:"much (exercise = uncountable)"},
+  {q:"I've met her a ___ times. (few/little)",a:"few (times = countable)"},
+  {q:"There's only a ___ orange juice left. (few/little)",a:"little (juice = uncountable)"},
+  // Imperatives
+  {q:"……… an average of 8 hours a night is about right.",a:"Get enough sleep."},
+  {q:"……… it's the most important meal of the day.",a:"Never miss breakfast."},
+  {q:"……… at least a litre and a half every day.",a:"Drink plenty of water."},
+  {q:"……… If you do, ask a doctor for help giving it up.",a:"Don't smoke."},
+  // Comparatives
+  {q:"Families are not as ___ as they used to be. (big/bigger)",a:"big"},
+  {q:"Life is not as ___ as it used to be. (easy/easier)",a:"easy"},
+  {q:"Life is ___ now than it used to be. (fast/faster)",a:"faster"},
+  // Used to ministerial
+  {q:"She didn't ___ be so thin, but she got ill. (use to/used to)",a:"use to"},
+  {q:"Cities ……… (not be) polluted. (Used to form)",a:"Cities didn't use to be polluted."},
+  {q:"How did you use to have fun? (How/you/have/fun) — reorder",a:"How did you use to have fun?"},
+ ],
+ writing:[
+  {title:"Cigarette advertising should be illegal",words:"100–120",
+   prompt:`Q/ Write 100–120 words on "Cigarette advertising should be illegal". Make sure you add linking words.`,
+   model:`Cigarette advertising should be illegal
+We see cigarette advertisements everywhere, in the streets, on walls, and even on clothes. Children and young people see them. They try to make people keep buying cigarettes. Cigarette advertising gives a positive message to the public, because it shows successful, popular and attractive people smoking, such as famous singers and actors. It gives a message as if smoking is the way of success and fame. It does not mention the dangers of smoking. Young people are easily affected by cigarette advertising because they have a desire to imitate others. In my opinion, cigarette advertising should be illegal because it does not warn or remind people about the bad effects of smoking.`,
+   ar:`إعلانات السجائر يجب أن تكون غير قانونية
+نرى إعلانات السجائر في كل مكان، في الشوارع، على الجدران، وحتى على الملابس. يراها الأطفال والشباب. تحاول هذه الإعلانات جعل الناس يستمرون في شراء السجائر.
+تعطي إعلانات السجائر رسالة إيجابية للجمهور، لأنها تُظهر أشخاصاً ناجحين وشعبيين وجذابين يدخنون، مثل المغنين والممثلين المشهورين. تعطي رسالة وكأن التدخين هو طريق النجاح والشهرة. لا تذكر أخطار التدخين. يتأثر الشباب بسهولة بهذه الإعلانات لأن لديهم رغبة في تقليد الآخرين.
+في رأيي، يجب أن تكون إعلانات السجائر غير قانونية لأنها لا تحذر الناس من الآثار السيئة للتدخين.`},
+  {title:"How to reduce the number of car accidents",words:"100–120",
+   prompt:`Q/ Write 100–120 words on 'How to reduce the number of car accidents'. Add linking words and phrases.`,
+   model:`Reducing Car Accidents
+Generally speaking, road safety is a major issue today. In my opinion, there are simple ways to reduce accidents.
+Firstly, we need better driver education. One reason for crashes is simply bad driving skills. Secondly, laws against speeding must be stricter. In addition, using mobile phones while driving should be banned completely. Furthermore, cities need to build safer roads with better lights because the streets' lighting is the most important quality for driving at night.
+As a result, these steps will save many lives. Therefore, everyone must work together to make our streets safe for all families.`,
+   ar:`الحد من حوادث السيارات
+بشكل عام، تُعدّ سلامة الطرق قضية كبرى اليوم. في رأيي، هناك طرق بسيطة لتقليل الحوادث.
+أولاً، نحتاج إلى تعليم أفضل للسائقين. أحد أسباب الحوادث هو سوء مهارات القيادة. ثانياً، يجب أن تكون القوانين ضد السرعة أكثر صرامة. بالإضافة إلى ذلك، يجب منع استخدام الهواتف المحمولة أثناء القيادة تماماً. علاوة على ذلك، تحتاج المدن إلى بناء طرق أكثر أماناً مع إضاءة أفضل.
+ونتيجةً لذلك، ستوفر هذه الخطوات الكثير من الأرواح. لذلك يجب على الجميع العمل معاً لجعل شوارعنا آمنة.`},
+ ]
+};
+
+// All 8 units complete
+const U2={n:2,t:"Law and order",ar:"القانون والنظام",
+ gr:["mustn't-needn't","should","present-perfect"],
+ lessons:[
+  {t:"Law and order",p:28,ar:"القانون والنظام"},
+  {t:"A police officer's duties",p:30,ar:"واجبات ضابط الشرطة"},
+  {t:"Airport security",p:32,ar:"أمن المطار"},
+  {t:"Applying for a job",p:34,ar:"التقديم على وظيفة"},
+  {t:"Military jobs",p:36,ar:"الوظائف العسكرية"},
+  {t:"A robbery",p:38,ar:"عملية سطو"},
+  {t:"A safety brochure",p:40,ar:"كتيب السلامة"},
+  {t:"Road safety",p:42,ar:"السلامة المرورية"},
+  {t:"Security technology",p:44,ar:"تكنولوجيا الأمن"}
+ ],
+ vocab:[
+  {l:"Lessons 1–2",words:[
+   {w:"evidence",m:"دليل / برهان"},{w:"suspect",m:"مشتبه به / يشتبه"},
+   {w:"arrest",m:"اعتقال / يعتقل"},{w:"duty",m:"واجب / مهمة"},
+   {w:"crime",m:"جريمة"},{w:"witness",m:"شاهد"},
+   {w:"investigate",m:"يحقق"},{w:"identify",m:"يتعرف على / يحدد"},
+   {w:"pickpocket",m:"نشال / يسرق من الجيوب"},
+   {w:"commit a crime",m:"يرتكب جريمة"},
+   {w:"fingerprints",m:"بصمات الأصابع"},
+   {w:"footprints",m:"آثار الأقدام"},
+   {w:"crime scene",m:"مسرح الجريمة"},
+   {w:"prevent",m:"يمنع / يحول دون"}
+  ]},
+  {l:"Lessons 3–4",words:[
+   {w:"unattended",m:"بدون مراقبة / بدون مرافق"},
+   {w:"baggage",m:"أمتعة"},
+   {w:"dispose of",m:"يتخلص من / يتخلى"},
+   {w:"declare",m:"يعلن / يصرح به"},
+   {w:"screening",m:"تفتيش / فحص أمني"},
+   {w:"customs",m:"جمارك"},
+   {w:"boarding card",m:"بطاقة صعود الطائرة"},
+   {w:"conveyor belt",m:"حزام نقل الأمتعة"},
+   {w:"reliable",m:"موثوق / جدير بالثقة"},
+   {w:"available",m:"متوفر / متاح"},
+   {w:"literate",m:"متعلم / قارئ"},
+   {w:"apply",m:"يتقدم / يقدم طلباً"}
+  ]},
+  {l:"Lesson 5 — Military",words:[
+   {w:"branch",m:"فرع"},{w:"maintain",m:"يصلح / يقوم بالصيانة"},
+   {w:"civilian",m:"مدني"},{w:"navy force",m:"القوة البحرية"},
+   {w:"air force",m:"القوة الجوية"},{w:"land forces",m:"القوة البرية"},
+   {w:"officer",m:"ضابط"},{w:"supervise",m:"مشرف / يشرف"},
+   {w:"install",m:"ينصّب / يركّب"},{w:"equipment",m:"معدات / أدوات"},
+   {w:"responsibility",m:"مسؤولية"},{w:"training",m:"تدريب"},
+   {w:"specialist",m:"متخصص"},{w:"vehicle",m:"مركبة"},
+   {w:"helicopter",m:"هليكوبتر / حوامة"}
+  ]}
+ ],
+ exercises:[
+  {lbl:"A",les:"Lesson 1 — Match the words",p:30,
+   txt:`1. without someone looking after it = unattended
+2. bags and suitcases for a journey = baggage
+3. there is nothing in it = empty
+4. throw away/get rid of = dispose of
+5. say you are carrying something you need to pay duty on = declare
+6. when passengers or bags are inspected = screening
+7. the amount of liquid people are allowed to carry = liquids rule
+8. responsible for regulating international trade = customs`},
+  {lbl:"B",les:"Mustn't / Needn't / Must — أسئلة وزارية",p:38,
+   txt:`1. You (mustn't/needn't) drive without wearing a seatbelt. → mustn't
+2. You are driving too fast! You (need to/needn't) slow down. → need to
+3. Please put out your cigarette. You (mustn't/needn't) smoke in the hospital. → mustn't
+4. There's petrol in the car, so you (need to/needn't) go to the petrol station. → needn't
+5. You (don't have to/must) pick me up — I'll get the bus. → don't have to
+6. Police officers (must/don't have to) prevent crimes. → must
+7. I (mustn't/needn't) be back later than 8 or my parents will be angry. → mustn't
+8. Drivers (mustn't/needn't) go over the speed limit. → mustn't
+9. You (needn't/need to) carry ID. It's the law. → need to
+10. The car (mustn't/needn't) have broken lights. → mustn't
+11. We have plenty of time. We (need to/needn't) hurry. → needn't
+12. When you get in a car, you (must/mustn't) put on your seat belt. → must
+
+القاعدة: mustn't = ممنوع (Prohibition) / needn't/don't have to = ليس ضرورياً (Lack of Obligation) / must = إلزام (Obligation)`},
+  {lbl:"C",les:"Polite Requests — أسئلة وزارية",p:63,
+   txt:`1. (see your ticket) → May I see your ticket, please?
+2. (give me your passport) → Would you give me your passport, please?
+3. (show me your passport) → Could you show me your passport, please?
+4. Help me with my baggage → Can you help me with my baggage, please?
+5. (get me a drink of water) → Would you get me a drink of water, please?
+
+القاعدة:
+Would/Could/Can + you + مصدر + ...? (للطلب من شخص آخر)
+May/Could/Can + I + مصدر + ...? (لطلب إذن)`},
+  {lbl:"D",les:"Suggestions & Offers — أسئلة وزارية",p:63,
+   txt:`Suggestions:
+1. Let's (watch/watched) the film. → watch
+2. (Shall we/Shall I) stop for lunch? Good idea. → Shall we
+3. Let's (take/taking) a taxi to the airport. → take
+4. Buy some magazines before boarding. (suggestion) → Let's buy some magazines.
+5. (meet at 3.00 in the departure lounge) → Shall we meet at 3.00 in the departure lounge?
+6. (go to the shops before the plane leaves) → Let's go / Shall we go to the shops?
+
+Offers:
+1. Help your friend with his baggage. (Offer) → I'll help you with your baggage.
+2. Offer to drive your brother to the match. (Use Shall) → Shall I drive you to the match?
+3. (open the window) (Offer: use Shall) → Shall I open the window?
+4. Offer a glass of water. (use Shall) → Shall I get you a glass of water?`},
+  {lbl:"E",les:"Should — Expectation أسئلة وزارية",p:71,
+   txt:`القاعدة: I think ... will → should / I don't think ... will → shouldn't
+
+1. We left two hours early. We (should/shouldn't) miss the plane. → shouldn't
+2. He studied hard. He (should/shouldn't) fail the exam. → shouldn't
+3. I've studied for the exam. I (should/shouldn't) fail. → shouldn't
+4. We (should/shouldn't) get lost — we have GPS. → shouldn't
+5. The police found fingerprints. They (should/shouldn't) arrest the thief soon. → should
+6. You are in 6th preparatory. You (should/shouldn't) graduate this summer. → should
+7. He learnt about computers. He (should/shouldn't) fix mine. → should
+8. They trained hard. They (should/shouldn't) lose the match. → shouldn't
+9. This is a new computer, so I think it is faster. → It should be faster.
+10. I've studied hard for the test, so I think I'll pass. → I should pass.`},
+  {lbl:"F",les:"Present Perfect — أسئلة وزارية",p:29,
+   txt:`1. I've never (ride/ridden) an elephant. → ridden
+2. Have you (ever/never) bought airplane tickets online? → ever
+3. I've ___ had one. (ago/just/yet) → just
+4. Have you ever (ate/eaten) octopus? → eaten
+5. I've (ever/never) ridden an elephant. → never
+6. How many letters (did you write/have you written) so far today? → have you written
+7. Have you (a. ever  b. never) flown in a helicopter? → ever
+
+Error Correction:
+1. Adam has come back from Beirut yesterday. ✗ → Adam came back from Beirut yesterday. ✓
+2. Fadia didn't speak to me since her sister's wedding. ✗ → Fadia hasn't spoken to me since her sister's wedding. ✓
+3. Did Salwa's family move house yet? ✗ → Has Salwa's family moved house yet? ✓
+4. We've all been to the park last weekend. ✗ → We all went to the park last weekend. ✓
+5. You look nice. Did you change your hairstyle? ✗ → Have you changed your hairstyle? ✓`}
+ ],
+ meanings:[
+  {q:"without someone looking after it",a:"unattended"},
+  {q:"bags and suitcases for a journey",a:"baggage"},
+  {q:"throw away / get rid of",a:"dispose of"},
+  {q:"when passengers or bags are inspected",a:"screening"},
+  {q:"responsible for regulating international trade",a:"customs"},
+  {q:"appt. → abbreviation of",a:"appointment"},
+  {q:"exp. → abbreviation of",a:"experience"},
+  {q:"co. → abbreviation of",a:"company"},
+  {q:"You ___ drive without a seatbelt. (mustn't/needn't)",a:"mustn't"},
+  {q:"You ___ pick me up — I'll get the bus. (mustn't/needn't)",a:"don't have to / needn't"},
+  {q:"We left two hours early. We ___ miss the plane.",a:"shouldn't"},
+  {q:"They trained hard. They ___ lose the match.",a:"shouldn't"},
+  {q:"The police found fingerprints. They ___ arrest the thief.",a:"should"},
+  {q:"(see your ticket) → Polite request",a:"May I see your ticket, please?"},
+  {q:"(show me your passport) → Polite request",a:"Could you show me your passport, please?"},
+  {q:"(meet at 3.00 in the departure lounge) → Suggestion",a:"Shall we meet at 3.00 in the departure lounge?"}
+ ],
+ writing:[
+  {title:"How to reduce the number of car accidents",words:"100–120",
+   prompt:"Q/ Write 100–120 words on 'How to reduce the number of car accidents'.",
+   model:`Reducing Car Accidents
+Generally speaking, road safety is a major issue today. In my opinion, there are simple ways to reduce accidents.
+Firstly, we need better driver education. One reason for crashes is simply bad driving skills. Secondly, laws against speeding must be stricter. In addition, using mobile phones while driving should be banned completely. Furthermore, cities need to build safer roads with better lights.
+As a result, these steps will save many lives. Therefore, everyone must work together to make our streets safe for all families.`,
+   ar:`الحد من حوادث السيارات
+بشكل عام، تُعدّ سلامة الطرق قضية كبرى اليوم. في رأيي، هناك طرق بسيطة لتقليل الحوادث.
+أولاً، نحتاج إلى تعليم أفضل للسائقين. أحد أسباب الحوادث هو سوء مهارات القيادة. ثانياً، يجب أن تكون القوانين ضد السرعة أكثر صرامة. بالإضافة إلى ذلك، يجب منع استخدام الهواتف المحمولة أثناء القيادة تماماً. علاوة على ذلك، تحتاج المدن إلى بناء طرق أكثر أماناً مع إضاءة أفضل.
+ونتيجةً لذلك، ستوفر هذه الخطوات الكثير من الأرواح.`}
+ ]};
+
+const U3={n:3,t:"Careers and choices",ar:"المهن والخيارات",
+ gr:["first-conditional","second-conditional","third-conditional"],
+ lessons:[
+  {t:"I'd like to work in the...",p:52,ar:"أود العمل في..."},
+  {t:"If you come round tomorrow",p:54,ar:"إذا جئت غداً"},
+  {t:"If you could choose any job",p:56,ar:"إذا كان بإمكانك اختيار أي وظيفة"},
+  {t:"She asked when she...",p:58,ar:"سألت متى..."},
+  {t:"I wish I'd brought my sunglasses",p:60,ar:"أتمنى لو أحضرت نظاراتي الشمسية"},
+  {t:"If I'd been fitter",p:62,ar:"لو كنت أكثر لياقة"},
+  {t:"Learn English in the UK",p:64,ar:"تعلم الإنجليزية في المملكة المتحدة"},
+  {t:"Summer jobs",p:66,ar:"وظائف الصيف"},
+  {t:"Focus on careers",p:68,ar:"التركيز على المهن"}
+ ],
+ vocab:[
+  {l:"Lessons 1–2",words:[
+   {w:"career",m:"مهنة / مسيرة وظيفية"},{w:"qualify",m:"يتأهل / يتخرج"},
+   {w:"opportunity",m:"فرصة"},{w:"salary",m:"راتب"},{w:"ambition",m:"طموح"},
+   {w:"experience",m:"خبرة"},{w:"aviation",m:"الطيران"},
+   {w:"fine art",m:"الفنون الجميلة"},{w:"geology",m:"علم الأرض"},
+   {w:"ecology",m:"علم البيئة"},{w:"conservation",m:"صون / حفظ"},
+   {w:"purification",m:"تنقية"}
+  ]},
+  {l:"Job Definitions",words:[
+   {w:"tour guide",m:"مرشد سياحي — يُرافق السياح"},
+   {w:"nurse",m:"ممرض — يرعى المرضى في المستشفى"},
+   {w:"pilot",m:"طيار — يقود الطائرة"},
+   {w:"journalist",m:"صحفي — يكتب مقالات للصحف"},
+   {w:"surgeon",m:"جراح — يجري العمليات في المستشفى"},
+   {w:"architect",m:"معماري — يصمم المباني"},
+   {w:"secretary",m:"سكرتير — يقوم بأعمال المكتب العامة"}
+  ]}
+ ],
+ exercises:[
+  {lbl:"A",les:"First Conditional — أسئلة وزارية",p:55,
+   txt:`1. If I (not bring) some books, I usually get very bored on the plane. → do not bring
+2. He gets angry if his sister (borrow) his CDs. → borrows
+3. If I (see/saw) him, I will tell him your news. → see
+4. If the traffic isn't too heavy, I (be) at the airport at 12:30. → will be
+5. Unless she (get) up early, she will miss the bus. → gets
+6. Which course (Muna apply) for if she passes all her exams? → will Muna apply?
+7. If he (want) a degree in Britain, he (have to) do a foundation course. → wants / will have to
+8. If you are offered a place, (you accept) it? → will you accept it?
+9. If I win a million pounds, ___ → I will buy a big house. (أي إجابة منطقية)
+10. If I don't pass the exam this year, I (take) it again. → will take`},
+  {lbl:"B",les:"Second Conditional",p:57,
+   txt:`1. If I were rich, I would travel around the world.
+2. If she had a car, she would drive to work.
+3. What would you do if you won the lottery?
+4. If I could choose any job, I would be a photographer.`},
+  {lbl:"C",les:"Third Conditional",p:62,
+   txt:`1. If I had studied, I would have passed.
+2. If she had left early, she wouldn't have missed the bus.
+3. If I had been fitter, I would have been better at sport.
+4. If only I had listened to him!
+5. Nour got a car loan, so he could buy a car. (Rewrite with 3rd conditional)
+→ If Nour hadn't got a car loan, he wouldn't have been able to buy a car.`},
+  {lbl:"D",les:"Job Definitions — أسئلة وزارية",p:52,
+   txt:`Define the following jobs:
+1. a tour guide = A tour guide is someone who shows tourists around.
+2. a nurse = A nurse is someone who looks after sick people in hospital.
+3. a pilot = A pilot is someone who flies a plane.
+4. a journalist = A journalist is someone who writes articles for newspapers.
+5. a surgeon = A surgeon is someone who operates on people in hospital.
+6. an architect = An architect is someone who designs buildings.
+7. a secretary = A secretary is someone who does general office work.`},
+  {lbl:"E",les:"Conditional Types — أسئلة وزارية",p:66,
+   txt:`أسئلة وزارية — أنواع الشرط:
+
+Zero conditional (حقيقة دائمة):
+If you look at a computer screen for too long, your eyes get tired.
+If you eat too much, you feel sick.
+
+First conditional (ممكن في المستقبل):
+If you send the letter today, it will arrive on Thursday.
+If you eat that burger, you will feel sick.
+
+Second conditional (غير محتمل):
+If I had a lot of money, I would buy a big boat.
+
+Third conditional (ماضٍ لم يقع):
+If I'd taken a taxi, I would have arrived on time.`}
+ ],
+ meanings:[
+  {q:"Define: a tour guide (shows tourists around)",a:"A tour guide is someone who shows tourists around."},
+  {q:"Define: a pilot (flies a plane)",a:"A pilot is someone who flies a plane."},
+  {q:"Define: a nurse (looks after sick people)",a:"A nurse is someone who looks after sick people in hospital."},
+  {q:"Define: a journalist (writes articles)",a:"A journalist is someone who writes articles for newspapers."},
+  {q:"Define: a surgeon (operates on people)",a:"A surgeon is someone who operates on people in hospital."},
+  {q:"If I (not bring) books, I get bored. → (1st cond.)",a:"do not bring"},
+  {q:"Unless she (get) up early, she will miss the bus.",a:"gets"},
+  {q:"If the traffic isn't too heavy, I (be) at the airport at 12:30.",a:"will be"},
+  {q:"Identify type: If you eat too much, you feel sick.",a:"Zero conditional"},
+  {q:"Identify type: If I had a lot of money, I would buy a boat.",a:"Second conditional"},
+  {q:"Identify type: If I'd taken a taxi, I would have arrived on time.",a:"Third conditional"}
+ ],
+ writing:[
+  {title:"Advantages of studying English in Britain",words:"100–120",
+   prompt:"Q/ Write 100–120 words on the advantages of studying English in Britain.",
+   model:`Studying English in Britain
+Studying English in Britain has many benefits. You hear English every day, in shops, and in parks so you get better fast. If you stay with a British family, you can practise speaking English at home. You can also watch TV, films, and listen to the radio in English, which helps you understand real conversations. Reading newspapers, signs, and advertisements teaches you new words and shows you how people live. All this makes learning English easier, more fun, and more useful than studying it in your own country. Being in Britain gives you the best chance to become fluent and confident in English.`,
+   ar:`دراسة الإنجليزية في بريطانيا
+دراسة الإنجليزية في بريطانيا لها فوائد كثيرة. تسمع الإنجليزية كل يوم في المتاجر والحدائق، لذا تتحسن بسرعة. إذا أقمت مع عائلة بريطانية، يمكنك ممارسة التحدث بالإنجليزية في المنزل. يمكنك أيضاً مشاهدة التلفاز والأفلام والاستماع إلى الراديو، مما يساعدك على فهم المحادثات الحقيقية.
+كل هذا يجعل تعلم الإنجليزية أسهل وأكثر متعة وأكثر فائدة من دراستها في بلدك. البقاء في بريطانيا يعطيك أفضل فرصة لتصبح طليقاً وواثقاً باللغة الإنجليزية.`}
+ ]};
+
+const U4={n:4,t:"Rashid & Rana Designs",ar:"رشيد ورنا للتصميم",
+ gr:["causative","wish"],
+ lessons:[
+  {t:"Rashid & Rana Designs",p:76,ar:"رشيد ورنا للتصميم"},
+  {t:"People didn't use to work out",p:78,ar:"الناس لم يكونوا يتمرنون"},
+  {t:"How to be the best!",p:80,ar:"كيف تكون الأفضل!"},
+  {t:"If only…",p:82,ar:"ياليت..."}
+ ],
+ vocab:[
+  {l:"Business Vocabulary",words:[
+   {w:"design",m:"تصميم / يصمم"},{w:"expand",m:"يتوسع / يتمدد"},
+   {w:"profit",m:"ربح"},{w:"competition",m:"منافسة"},
+   {w:"advertise",m:"يُعلن / يُروّج"},{w:"customer",m:"زبون / عميل"},
+   {w:"hire",m:"يوظّف / يستأجر"},{w:"branch",m:"فرع"},
+   {w:"income",m:"دخل"},{w:"invest",m:"يستثمر"}
+  ]}
+ ],
+ exercises:[
+  {lbl:"A",les:"Causative Have/Get — أسئلة وزارية",p:79,
+   txt:`1. She asked somebody to fix the window. (have) → She had the window fixed.
+2. I asked the mechanic to check the brakes. (have) → I had the brakes checked.
+3. My father is asking someone to paint the room. (have) → My father is having the room painted.
+4. Somebody stole their television. (have) → They had their television stolen.
+5. Someone will paint my room. (get) → I will get my room painted. (My → I)
+6. I asked somebody to cut my hair. (have) → I had my hair cut.
+7. My mother asked somebody to paint the house. (get) → My mother got the house painted.
+8. My father asked someone to fix the computer. (get) → My father got the computer fixed.
+9. Someone cleaned her room. (get) → She got her room cleaned. (Her → She)
+10. A photographer took their photo. (have) → They had their photo taken.`},
+  {lbl:"B",les:"Wish / If only — أسئلة وزارية",p:83,
+   txt:`1. I can't speak Arabic well. → I wish I could speak Arabic well.
+2. I didn't study for the exam. → I wish I had studied for the exam.
+3. It's so noisy outside! → I wish it weren't so noisy outside!
+4. If only I ___ (listen) to my parents! → If only I had listened to my parents!
+5. She doesn't have a car. → She wishes she had a car.
+6. I want to be taller but I'm not. → I wish I were taller.
+7. He wishes he (not miss) the bus. → hadn't missed
+8. I wish you (stop) making that noise! → would stop`}
+ ],
+ meanings:[
+  {q:"She asked somebody to fix the window. (have)",a:"She had the window fixed."},
+  {q:"Somebody stole their television. (have)",a:"They had their television stolen."},
+  {q:"My father asked someone to fix the computer. (get)",a:"My father got the computer fixed."},
+  {q:"I asked somebody to cut my hair. (have)",a:"I had my hair cut."},
+  {q:"I can't speak Arabic well. (wish)",a:"I wish I could speak Arabic well."},
+  {q:"I didn't study for the exam. (wish)",a:"I wish I had studied for the exam."},
+  {q:"It's noisy outside! (wish)",a:"I wish it weren't so noisy outside!"},
+  {q:"If only I ___ (listen) to my parents!",a:"If only I had listened to my parents!"}
+ ],
+ writing:[
+  {title:"A job interview advice letter",words:"100–120",
+   prompt:"Q/ Write a letter to Ahmed giving advice on how to get the job. Use (you should or you shouldn't) at least five times. Ahmed wants to be a security guard with an interview tomorrow at 9:00 AM.",
+   model:`A Job Interview
+Dear Ahmed,
+I am glad to hear that you have an interview tomorrow at 9:00 AM, and I want to give you some advice. You should leave your house no later than 8:00 AM to avoid traffic. You shouldn't get lost on the way. You should arrive 10–15 minutes early, as the first impression is very important.
+You should also dress formally and neatly for the meeting. Don't forget to take an extra copy of your CV. You shouldn't use your phone during the interview. You should answer the questions confidently and smile. I can't wait to hear about the result of the interview.
+Best wishes,
+Zaid`,
+   ar:`مقابلة عمل
+عزيزي أحمد،
+يسعدني سماع أن لديك مقابلة عمل غداً في الساعة التاسعة صباحاً، وأريد أن أقدم لك بعض النصائح. يجب عليك مغادرة منزلك في موعد أقصاه الساعة الثامنة صباحاً لتجنب الازدحام. يجب ألا تضل الطريق. يجب أن تصل قبل 10-15 دقيقة من الموعد، لأن الانطباع الأول مهم جداً.
+يجب عليك أيضاً ارتداء ملابس رسمية وأنيقة. لا تنسَ أن تأخذ نسخة إضافية من سيرتك الذاتية. يجب ألا تستخدم هاتفك أثناء المقابلة. يجب أن تجيب على الأسئلة بثقة وتبتسم.
+مع أطيب التمنيات، زيد`}
+ ]};
+
+const U5={n:5,t:"Tourism and holidays",ar:"السياحة والإجازات",
+ gr:["passive","relative"],
+ lessons:[
+  {t:"Let's do some sightseeing",p:86,ar:"لنشاهد معالم المدينة"},
+  {t:"Have you ever stayed in...?",p:88,ar:"هل سبق وأقمت في...؟"},
+  {t:"I've been coming here since 2009",p:90,ar:"أنا آتي هنا منذ 2009"},
+  {t:"I've tried it a few times",p:92,ar:"جربتها عدة مرات"},
+  {t:"We couldn't get a room",p:94,ar:"لم نستطع الحصول على غرفة"},
+  {t:"The atmosphere was wonderful",p:96,ar:"كان الجو رائعاً"},
+  {t:"Beautiful Kerkennah",p:98,ar:"كركنة الجميلة"},
+  {t:"Tourism and environment",p:100,ar:"السياحة والبيئة"},
+  {t:"Why are holidays so important?",p:102,ar:"لماذا الإجازات مهمة؟"}
+ ],
+ vocab:[
+  {l:"Tourism Vocabulary",words:[
+   {w:"sightseeing",m:"مشاهدة المعالم السياحية"},
+   {w:"atmosphere",m:"أجواء / مناخ"},
+   {w:"reservation",m:"حجز (فندق / طيران)"},
+   {w:"destination",m:"وجهة / مقصد"},
+   {w:"ski resort",m:"منتجع التزلج"},
+   {w:"self-catering apartment",m:"شقة ذاتية الخدمة"},
+   {w:"package deal",m:"صفقة كاملة (فندق + طيران)"},
+   {w:"sea front",m:"واجهة البحر"},
+   {w:"boarding card",m:"بطاقة صعود الطائرة"},
+   {w:"travel agency",m:"وكالة سفريات"},
+   {w:"packed lunch",m:"غداء معلب / جاهز"},
+   {w:"car hire",m:"تأجير سيارة"},
+   {w:"five-star hotel",m:"فندق خمس نجوم"},
+   {w:"excursion",m:"رحلة قصيرة / نزهة"},
+   {w:"ruins",m:"أطلال / آثار"}
+  ]},
+  {l:"Present Perfect — Key Words",words:[
+   {w:"ever",m:"سبق — في الأسئلة"},
+   {w:"never",m:"أبداً — في الإثبات"},
+   {w:"just",m:"للتو — في الإثبات والسؤال"},
+   {w:"already",m:"بالفعل — في الإثبات"},
+   {w:"yet",m:"بعد — في النفي والسؤال"},
+   {w:"since",m:"منذ — نقطة زمنية"},
+   {w:"for",m:"لمدة — مدة زمنية"},
+   {w:"so far",m:"حتى الآن — في النفي والسؤال"}
+  ]}
+ ],
+ exercises:[
+  {lbl:"A",les:"Relative Clauses — أسئلة وزارية",p:93,
+   txt:`1. The man ___ lives next door has just bought a jet. → who
+2. The hotel has a pool ___ is very big. → that/which
+3. Riverside Cinema, ___ the tickets only cost £6, usually has good films. → where
+4. Morocco, ___ is one of the most beautiful countries, attracts tourists. → which
+5. My cousin Mike, ___ loves skiing, is going to buy a holiday home. → who
+6. Khalil Gibran, ___ wrote The Prophet, was a famous poet. → who
+7. My sister, ___ favourite food is pizza, is having her party at an Italian restaurant. → whose
+8. Edinburgh, ___ there's a huge festival, is an exciting place. → where
+9. The hotel has a pool ___ is very big. (defining) → that/which
+10. Ali is the student ___ won the competition. → who/that`},
+  {lbl:"B",les:"Present Perfect vs Past Simple — أسئلة وزارية",p:92,
+   txt:`1. The last time I saw her was in 2001. (not see)
+→ I haven't seen her since 2001.
+2. We first met them in July. (know)
+→ We've known them since July.
+3. She last went to the dentist in September. (not be)
+→ She hasn't been to the dentist since September.
+4. He bought that motorbike a long time ago. (have)
+→ He's had that motorbike for a long time.
+5. We last ate there in July. (not eat)
+→ We haven't eaten there since July.
+
+Error Correction:
+1. Adam has come back from Beirut yesterday. ✗ → Adam came back from Beirut yesterday. ✓
+2. Fadia didn't speak to me since her wedding. ✗ → Fadia hasn't spoken to me since her wedding. ✓`},
+  {lbl:"C",les:"for / since — أسئلة وزارية",p:92,
+   txt:`1. I have had this car ___ November. → since (نقطة زمنية)
+2. They've been talking ___ eight o'clock. → since
+3. I haven't seen a good film ___ last January. → since
+4. I haven't seen her ___ three months. → for (مدة)
+5. Have you worked here ___ you graduated? → since
+6. He has had this motorbike ___ three years. → for
+7. We haven't met ___ we were in school. → since
+8. The teacher hasn't known the class ___ a long time. → for
+9. My family has lived in the same house ___ 1970. → since
+10. They have been married ___ three years. → for
+11. I haven't seen him ___ ages. → for
+12. We have been married ___ 2003. → since
+
+القاعدة: for + مدة (three years, ages, a long time) / since + نقطة زمنية (2003, Monday, I was born)`},
+  {lbl:"D",les:"Present Perfect Continuous — أسئلة وزارية",p:91,
+   txt:`1. Layla is in the kitchen. She (has been cooking/cooks) for three hours now. → has been cooking
+2. They are films producers. (make) films since they graduated. → have been making
+3. Souad looks tired. I don't think she (sleep) well recently. → has been sleeping
+4. She's writing letters. She started at two o'clock. (since/for)
+→ She has been writing letters since two o'clock.
+5. I (cook) for two hours. → I have been cooking for two hours.
+6. How long have you been learning Japanese?
+→ For two years. / Since 2005.
+7. How long have you been writing?
+→ Since 2002. / For two hours.`},
+  {lbl:"E",les:"gone vs been — أسئلة وزارية",p:92,
+   txt:`1. I (haven't been/haven't gone) to China yet. → haven't been
+2. My parents aren't home. They have (gone/go) out. → gone
+3. My sister isn't home. She has (been/gone) shopping. → gone
+4. I've never (gone/been) to the USA. → been
+
+القاعدة:
+gone = ذهب ولم يرجع بعد (لا يزال هناك)
+been = ذهب ورجع (أو قد زار المكان من قبل)`}
+ ],
+ meanings:[
+  {q:"Have you ever (stay/stayed) in an unusual hotel?",a:"stayed"},
+  {q:"I've never (ride/ridden) an elephant.",a:"ridden"},
+  {q:"Have you (ever/never) been to London?",a:"ever"},
+  {q:"I ___ had one. (ago/just/yet)",a:"just"},
+  {q:"I (haven't been/haven't gone) to China yet.",a:"haven't been"},
+  {q:"She has (been/gone) shopping.",a:"gone"},
+  {q:"I have had this car ___ November. (for/since)",a:"since"},
+  {q:"I haven't seen her ___ three months. (for/since)",a:"for"},
+  {q:"The man ___ lives next door... (who/which)",a:"who"},
+  {q:"Riverside Cinema, ___ tickets cost £6... (where/which)",a:"where"},
+  {q:"My sister, ___ favourite food is pizza... (whose/who)",a:"whose"},
+  {q:"She has been writing ___ two o'clock. (for/since)",a:"since"},
+  {q:"I have been cooking ___ two hours. (for/since)",a:"for"}
+ ],
+ writing:[
+  {title:"My favourite holiday destination",words:"100–120",
+   prompt:"Q/ Write 100–120 words about your favourite holiday destination.",
+   model:`My Favourite Holiday Destination
+My favourite holiday destination is Erbil in northern Iraq. It is a beautiful city with amazing places to visit. There are ancient markets, the famous Citadel, and wonderful restaurants with delicious local food.
+There are many things to do in Erbil. You can visit historical museums, walk through the old bazaars, and enjoy the cool mountain air. The people there are very friendly and welcoming.
+I love Erbil because it is different from other cities. It is clean, safe, and full of history. I think everyone should visit Erbil at least once in their life because it is truly a wonderful experience.`,
+   ar:`وجهتي السياحية المفضلة
+وجهتي السياحية المفضلة هي أربيل في شمال العراق. إنها مدينة جميلة بأماكن رائعة. هناك أسواق قديمة والقلعة الشهيرة ومطاعم رائعة بأطعمة محلية لذيذة.
+هناك أشياء كثيرة للقيام بها في أربيل. يمكنك زيارة المتاحف التاريخية والسير في الأسواق القديمة والاستمتاع بالهواء الجبلي المنعش. الناس هناك ودودون ومرحّبون جداً.
+أحب أربيل لأنها مختلفة عن المدن الأخرى. إنها نظيفة وآمنة ومليئة بالتاريخ.`}
+ ]};
+
+const U6={n:6,t:"Money and banking",ar:"المال والمصارف",
+ gr:["mustn't-needn't","should","passive"],
+ lessons:[
+  {t:"What does it all mean?",p:110,ar:"ماذا يعني كل هذا؟"},
+  {t:"Which account should I get?",p:112,ar:"أي حساب يجب أن أفتح؟"},
+  {t:"Meet a banker",p:114,ar:"مقابلة مع مصرفي"},
+  {t:"Problems",p:116,ar:"مشاكل"},
+  {t:"The big day",p:118,ar:"اليوم الكبير"},
+  {t:"A car loan",p:120,ar:"قرض السيارة"},
+  {t:"Letters",p:122,ar:"الرسائل"},
+  {t:"I apologize for any...",p:124,ar:"أعتذر عن أي..."},
+  {t:"Making money",p:126,ar:"جني المال"}
+ ],
+ vocab:[
+  {l:"Banking Vocabulary",words:[
+   {w:"loan",m:"قرض / دين"},{w:"account",m:"حساب مصرفي"},
+   {w:"currency",m:"عملة"},{w:"interest",m:"فائدة (مصرفية)"},
+   {w:"investment",m:"استثمار"},{w:"fortune",m:"ثروة / مبلغ كبير"},
+   {w:"withdraw",m:"يسحب (من البنك)"},{w:"deposit",m:"يودع / وديعة"},
+   {w:"balance",m:"رصيد حساب"},{w:"instalment",m:"قسط / دفعة"},
+   {w:"down payment",m:"مقدمة / دفعة أولى"},
+   {w:"insurance",m:"تأمين"},{w:"profit",m:"ربح"},
+   {w:"sensible",m:"حكيم / عاقل"}
+  ]},
+  {l:"Modal Verbs — Deductions",words:[
+   {w:"must",m:"لا بد أنه (يقين إثباتي)"},
+   {w:"can't",m:"لا يمكن أن (يقين نفي)"},
+   {w:"may / might",m:"قد / ربما (احتمال)"},
+   {w:"must have + pp",m:"لا بد أنه (استنتاج عن الماضي)"},
+   {w:"can't have + pp",m:"لا يمكن أن يكون (نفي عن الماضي)"},
+   {w:"may/might have + pp",m:"ربما (احتمال عن الماضي)"}
+  ]}
+ ],
+ exercises:[
+  {lbl:"A",les:"Modal Verbs — Deduction أسئلة وزارية",p:116,
+   txt:`Present deductions (must/can't/might/may):
+1. You must be the new bank manager. Nice to meet you. (يقين إثباتي)
+2. You can't be serious! (يقين نفي)
+3. It might be better to change banks. (احتمال)
+4. It may be for the plumber. (احتمال)
+
+Past deductions (must have/can't have/may have/might have + pp):
+1. I left some pizza in the fridge but it's not there. Saeed (eat) → must have eaten it.
+2. You (finish) the test already. That's impossible! → can't have finished
+3. I think I (leave) the oven on. → may/might have left
+4. What! Hamed and Marwa got divorced?! That (be) → can't be true!
+5. It (be) at the cafe then. → must have been
+
+Conversation answers:
+1. You might leave/might have left it at home. → might have left
+2. It must be/must have been at the cafe then. → must have been
+3. You must be/have been very proud of yourself! → must be
+4. They can't put/can't have put the price up so quickly! → can't have put`},
+  {lbl:"B",les:"Passive — All Tenses أسئلة وزارية",p:115,
+   txt:`Present Simple Passive:
+1. The money in a bank account ___ (use) in many ways. → is used
+2. English is taught in all schools. (active → passive) ✓
+
+Past Simple Passive:
+1. Somebody took my wallet last week. → My wallet was taken last week.
+2. The police found fingerprints. → Fingerprints were found in the crime scene.
+3. My father wrote this letter. → This letter was written by my father.
+4. Somebody robbed the bank yesterday. → The bank was robbed yesterday.
+5. The bank was robbed yesterday. (unscramble: was/The/yesterday/bank/robbed)
+
+Present Continuous Passive:
+1. The machine (repair) at the moment. → is being repaired
+2. My bedroom ___ (paint), so I'm sleeping in the living room. → is being painted
+3. Somebody is cleaning the room right now. → The room is being cleaned.
+
+Present Perfect Passive:
+1. Somebody has stolen my wallet. → My wallet has been stolen.
+2. The stairs have been repaired to avoid accidents.
+
+Future Simple Passive:
+1. The bill ___ tomorrow. (paid/will be paid/paying) → will be paid
+2. Somebody will grade our homework. → Our homework will be graded.
+3. The house will be sold before the end of the year.`},
+  {lbl:"C",les:"Conditional Sentences — أسئلة وزارية",p:117,
+   txt:`أنواع الشرط:
+1. If Sami hadn't forgotten his keys, he wouldn't have had to sleep in the car. → Third conditional
+2. If you studied harder, you would pass the exam. → Second conditional
+3. If Layan goes to the shop tomorrow, I won't have to go. → First conditional
+4. If people drive for too long, they get tired. → Zero conditional
+
+Rewrite with conditionals:
+1. The car isn't new, so Nour doesn't have to pay big instalments.
+→ If the car was new, Nour would have to pay big instalments.
+2. Nour didn't park carefully, so he broke a light.
+→ If Nour had parked carefully, he wouldn't have broken a light.
+3. Nour has car insurance, so he doesn't have to pay for the broken light.
+→ If Nour didn't have car insurance, he would have to pay for the broken light.`}
+ ],
+ meanings:[
+  {q:"You ___ be the new manager. Nice to meet you. (must/can't)",a:"must (يقين إثباتي)"},
+  {q:"You can't ___ serious! (be/have been)",a:"be"},
+  {q:"Saeed ate the pizza. I left. → must ___ eaten it.",a:"must have eaten"},
+  {q:"That (be) can't be true! → past form",a:"can't have been true"},
+  {q:"The machine (repair) at the moment. → passive",a:"is being repaired"},
+  {q:"Somebody took my wallet last week. → passive",a:"My wallet was taken last week."},
+  {q:"The bill ___ tomorrow. (paid/will be paid)",a:"will be paid"},
+  {q:"Somebody has stolen my wallet. → passive",a:"My wallet has been stolen."},
+  {q:"identify: If people drive too long, they get tired.",a:"Zero conditional"},
+  {q:"identify: If Nour hadn't got a loan, he wouldn't have bought a car.",a:"Third conditional"}
+ ],
+ writing:[
+  {title:"Advantages and disadvantages of using credit cards",words:"100–120",
+   prompt:"Q/ Write 100–120 words about the advantages and disadvantages of using credit cards.",
+   model:`Credit Cards: Advantages and Disadvantages
+Credit cards are very useful in modern life. There are many advantages to using them. Firstly, they are convenient because you do not need to carry cash. Secondly, they are safe because if someone steals your card, the bank can protect your money. Furthermore, credit cards are accepted in most countries around the world.
+However, there are also disadvantages. If you spend too much, you may get into debt. Also, some people forget to pay their bills on time, which means they have to pay interest. In conclusion, credit cards are helpful if you use them wisely, but dangerous if you are not careful.`,
+   ar:`بطاقات الائتمان: المزايا والعيوب
+بطاقات الائتمان مفيدة جداً في الحياة الحديثة. هناك مزايا كثيرة لاستخدامها. أولاً، إنها مريحة لأنك لا تحتاج إلى حمل النقود. ثانياً، إنها آمنة لأنه إذا سرق أحد بطاقتك، يمكن للبنك حماية أموالك. علاوة على ذلك، تُقبل بطاقات الائتمان في معظم دول العالم.
+ومع ذلك، هناك أيضاً عيوب. إذا أنفقت أكثر من اللازم، قد تقع في الديون. في الختام، بطاقات الائتمان مفيدة إذا استخدمتها بحكمة.`}
+ ]};
+
+const U7={n:7,t:"Education and learning",ar:"التعليم والتعلم",
+ gr:["gerund"],
+ lessons:[
+  {t:"What can I study?",p:134,ar:"ماذا يمكنني أن أدرس؟"},
+  {t:"A language school",p:136,ar:"مدرسة اللغات"},
+  {t:"Improve your computer skills",p:138,ar:"حسّن مهاراتك في الحاسوب"},
+  {t:"Summer courses",p:140,ar:"دورات الصيف"},
+  {t:"Volunteers at the...",p:142,ar:"المتطوعون في..."},
+  {t:"Learning experiences",p:144,ar:"تجارب تعليمية"},
+  {t:"Books and the internet",p:146,ar:"الكتب والإنترنت"},
+  {t:"Learning languages",p:148,ar:"تعلم اللغات"},
+  {t:"Using the library",p:150,ar:"استخدام المكتبة"}
+ ],
+ vocab:[
+  {l:"Education Vocabulary",words:[
+   {w:"scholarship",m:"منحة دراسية"},{w:"graduation",m:"تخرج"},
+   {w:"lecture",m:"محاضرة"},{w:"assignment",m:"واجب / مهمة"},
+   {w:"knowledge",m:"معرفة / علم"},{w:"certificate",m:"شهادة"},
+   {w:"fluent",m:"طليق (في اللغة)"},{w:"improve",m:"يتحسن / يطور"},
+   {w:"enhance",m:"يعزز / يحسّن"},{w:"enrol",m:"يلتحق / يسجل"},
+   {w:"admission",m:"قبول / سماح بالدخول"},
+   {w:"registration",m:"تسجيل"},{w:"attendance",m:"حضور"},
+   {w:"qualifications",m:"مؤهلات"},{w:"application",m:"طلب / استمارة"}
+  ]},
+  {l:"Word Formations (-ation / -ment / -ance)",words:[
+   {w:"enhance → enhancement",m:"يعزز → تعزيز"},
+   {w:"enrol → enrolment",m:"يلتحق → التحاق"},
+   {w:"apply → application",m:"يتقدم → طلب"},
+   {w:"admit → admission",m:"يقبل → قبول"},
+   {w:"attend → attendance",m:"يحضر → حضور"},
+   {w:"register → registration",m:"يسجل → تسجيل"}
+  ]},
+  {l:"Future Tenses",words:[
+   {w:"Future Simple (will)",m:"للتوقع والوعود: I will help you"},
+   {w:"Present Continuous (future)",m:"للترتيبات الثابتة: I am meeting Ali at 5"},
+   {w:"Present Simple (future)",m:"للجداول: The class starts at 6:00"},
+   {w:"Going to",m:"للخطط والنوايا: I am going to study"},
+   {w:"Future Continuous",m:"لحدث في وقت محدد: I will be studying at 7:00"},
+   {w:"Future in the Past",m:"would/was going to: He decided he would study"}
+  ]}
+ ],
+ exercises:[
+  {lbl:"A",les:"Gerund vs Infinitive — أسئلة وزارية",p:137,
+   txt:`1. I enjoy ___ (swim) in the sea. → swimming
+2. She decided ___ (study) medicine. → to study
+3. They avoided ___ (make) noise. → making
+4. He stopped ___ (smoke) last year. (quit forever) → smoking
+5. He stopped ___ (buy) a newspaper. (in order to) → to buy
+6. I hope ___ (see) you soon. → to see
+7. I remember ___ (post) the letter. (I did post it already) → posting
+8. Did you remember ___ (lock) the door? (before leaving) → to lock
+9. She suggested ___ (go) to the cinema. → going
+10. He managed ___ (finish) on time. → to finish
+11. I'd like ___ (visit) you next week. → to visit
+12. Would you mind ___ (wait) a moment? → waiting`},
+  {lbl:"B",les:"Word Formations — أسئلة وزارية",p:91,
+   txt:`1. admit, admission; enroll, enrollment
+2. apply, application; enhance, enhancement
+3. attend, attendance; register, registration
+4. apply, application; enroll, enrollment
+5. enhance, enhancement; attend, attendance
+6. enroll, enrollment; apply, application
+7. register, registration; apply, application
+8. enhance, enhancement; admit, admittance
+9. register, registration; apply, application
+10. Apply, application; register, registration`},
+  {lbl:"C",les:"Future Tenses — أسئلة وزارية",p:98,
+   txt:`Future Simple (will):
+1. I think she (will like/will be liking) the work. → will like
+2. I hope she (will do/will be doing) better this time. → will do
+3. The weather is bad. I hope ___ (be) sunny tomorrow. → will be
+
+Present Continuous for future:
+1. She (is meeting/meets) the manager tomorrow. → is meeting
+2. He (leaves/is leaving) for Cairo this week. → is leaving
+
+Present Simple for future:
+1. Volunteer training (begins/is beginning) on the first. → begins
+2. The train (leaves/will leave) at 11:00. → leaves
+
+Going to:
+1. Dana (is going to volunteer/volunteers) when she has more time. → is going to volunteer
+2. I'm sorry, I can't go. (I will go/I'm going to go) to the dentist. → I'm going to go
+3. I decided ___ (learn) English. → I was going to learn English. (Future in Past)
+
+Future in the Past:
+1. He is going to be a librarian. He decided he ___. → He was going to be a librarian.
+2. I'm going to learn Chinese. I decided ___. → I was going to learn Chinese.
+3. The internet will be working again soon. Our teacher promised that ___. → would be working again.`}
+ ],
+ meanings:[
+  {q:"I enjoy ___ (swim) in the sea.",a:"swimming"},
+  {q:"She decided ___ (study) medicine.",a:"to study"},
+  {q:"He stopped ___ (smoke) last year. (quit forever)",a:"smoking"},
+  {q:"He stopped ___ (buy) a newspaper. (in order to)",a:"to buy"},
+  {q:"Did you remember ___ (lock) the door? (before leaving)",a:"to lock"},
+  {q:"I remember ___ (post) the letter. (I already posted it)",a:"posting"},
+  {q:"admit → noun",a:"admission"},
+  {q:"apply → noun",a:"application"},
+  {q:"enhance → noun",a:"enhancement"},
+  {q:"attend → noun",a:"attendance"},
+  {q:"register → noun",a:"registration"},
+  {q:"Present simple for future example",a:"The class starts at 6:00. (جدول ثابت)"},
+  {q:"Present continuous for future example",a:"I am meeting Ali at 5:00. (ترتيب ثابت)"},
+  {q:"Future in the Past: I'm going to learn Arabic. I decided ___",a:"I was going to learn Arabic."}
+ ],
+ writing:[
+  {title:"The importance of learning English",words:"100–120",
+   prompt:"Q/ Write 100–120 words about the importance of learning English.",
+   model:`The Importance of Learning English
+English is the most widely spoken language in the world today. It is very important to learn English for many reasons.
+Firstly, English is the language of science, technology, and the internet. If you can read and write in English, you can find information about anything. Secondly, English helps you to travel and communicate with people from different countries. Many jobs today require good English skills.
+Furthermore, learning English opens the door to better education. Many universities use English as their main language. In conclusion, learning English gives people more opportunities in life and helps them to succeed in a modern world. Everyone should try to learn it.`,
+   ar:`أهمية تعلم اللغة الإنجليزية
+الإنجليزية هي اللغة الأكثر انتشاراً في العالم اليوم. من المهم جداً تعلم الإنجليزية لأسباب كثيرة.
+أولاً، الإنجليزية هي لغة العلم والتكنولوجيا والإنترنت. إذا كنت تستطيع القراءة والكتابة بالإنجليزية، يمكنك إيجاد معلومات عن أي شيء. ثانياً، الإنجليزية تساعدك على السفر والتواصل مع الناس من دول مختلفة.
+في الختام، تعلم الإنجليزية يفتح أبواب فرص أفضل في الحياة ويساعد الناس على النجاح في العالم الحديث.`}
+ ]};
+
+const U8={n:8,t:"Our natural resources",ar:"مواردنا الطبيعية",
+ gr:["passive"],
+ lessons:[
+  {t:"Our natural resources",p:158,ar:"مواردنا الطبيعية"},
+  {t:"Recycling waste",p:160,ar:"إعادة تدوير النفايات"},
+  {t:"A renewable resource",p:162,ar:"مورد متجدد"},
+  {t:"The Euphrates River",p:164,ar:"نهر الفرات"}
+ ],
+ vocab:[
+  {l:"Natural Resources",words:[
+   {w:"renewable",m:"متجدد (طاقة)"},{w:"resource",m:"مورد / مصدر"},
+   {w:"pollution",m:"تلوث"},{w:"solar",m:"شمسي"},
+   {w:"recycle",m:"يعيد التدوير"},{w:"conserve",m:"يحافظ على"},
+   {w:"detect",m:"يكشف / يرصد"},{w:"invent",m:"يخترع"},
+   {w:"measure",m:"يقيس"},{w:"regularly",m:"بانتظام"},
+   {w:"greenhouse gases",m:"الغازات الدفيئة"},
+   {w:"deforestation",m:"قطع الغابات"},
+   {w:"global warming",m:"الاحتباس الحراري"},
+   {w:"turbine",m:"توربين / عنفة"},
+   {w:"fossil fuels",m:"الوقود الأحفوري"},
+   {w:"windmill",m:"طاحونة الهواء"}
+  ]}
+ ],
+ exercises:[
+  {lbl:"A",les:"Passive — All Forms أسئلة وزارية",p:161,
+   txt:`Present Simple Passive:
+1. Oil is found in the south.
+2. English is spoken worldwide.
+3. New roads are built every year.
+
+Past Simple Passive:
+1. They built the dam in 1960. → The dam was built in 1960.
+2. The police found fingerprints. → Fingerprints were found in the crime scene.
+3. Somebody stole my wallet last week. → My wallet was stolen last week.
+4. The previous owner cut down the trees. → The trees were cut down.
+5. (was/The/yesterday/bank/robbed) → The bank was robbed yesterday.
+
+Present Continuous Passive:
+1. Someone is repairing the road now. → The road is being repaired now.
+2. The machine ___ (repair) at the moment. → is being repaired
+3. My room ___ (paint), so I'm sleeping in the living room. → is being painted
+
+Present Perfect Passive:
+1. The engineers have completed the project. → The project has been completed.
+2. Somebody has stolen my wallet. → My wallet has been stolen.
+
+Future Simple Passive:
+1. They will finish the bridge next year. → The bridge will be finished next year.
+2. Somebody will grade our homework. → Our homework will be graded.
+3. If birds fly into turbines, they (kill). → will be killed.`},
+  {lbl:"B",les:"Active vs Passive — أسئلة وزارية",p:115,
+   txt:`Complete with passive or active form:
+1. The money in a bank account ___ (use) in many ways. → is used
+2. The machine ___ (repair) at the moment. → is being repaired
+3. The loan ___ (pay back) at the end of the year. → is paid back
+4. The decision ___ (make) tomorrow by the bank manager. → will be made
+5. Fatima ___ (get) a loan last week to buy her flat. → got
+6. Bankers usually ___ (like) helping their customers. → like
+7. Was the information ___ (send) to you by mail last week? → sent`},
+  {lbl:"C",les:"Environmental Reading",p:160,
+   txt:`اقرأ وأجب:
+1. What is the difference between a renewable and non-renewable resource?
+→ Renewable resources don't disappear when used. Non-renewable resources will eventually run out.
+
+2. Give two examples of a renewable resource from the text.
+→ Trees, solar energy.
+
+3. Give one example of a non-renewable resource.
+→ Oil.
+
+4. How do greenhouse gases harm the environment?
+→ They contribute to global warming (the greenhouse effect).
+
+5. What is deforestation?
+→ The process of cutting down large numbers of trees that cannot be replaced.`}
+ ],
+ meanings:[
+  {q:"They built the dam in 1960. → passive",a:"The dam was built in 1960."},
+  {q:"Someone is repairing the road. → passive",a:"The road is being repaired."},
+  {q:"The engineers have completed the project. → passive",a:"The project has been completed."},
+  {q:"They will finish the bridge next year. → passive",a:"The bridge will be finished next year."},
+  {q:"Oil ___ (find) in the south. → present passive",a:"Oil is found in the south."},
+  {q:"English ___ (speak) worldwide. → present passive",a:"English is spoken worldwide."},
+  {q:"If birds fly into turbines, they (kill). → passive",a:"will be killed"},
+  {q:"Renewable resource example",a:"Trees, solar energy (don't run out)"},
+  {q:"Non-renewable resource example",a:"Oil (will eventually run out)"},
+  {q:"What do greenhouse gases cause?",a:"Global warming / the greenhouse effect"}
+ ],
+ writing:[
+  {title:"The importance of recycling",words:"100–120",
+   prompt:"Q/ Write 100–120 words about the importance of recycling.",
+   model:`The Importance of Recycling
+Recycling is one of the most important things we can do to protect our environment. When we recycle materials like paper, plastic, and glass, we reduce the amount of waste that goes to landfills.
+Firstly, recycling helps to save natural resources. For example, recycling paper means fewer trees are cut down. Secondly, it reduces pollution because burning waste causes harmful gases. Furthermore, recycling saves energy because making new products from recycled materials uses less energy than making them from raw materials.
+In conclusion, everyone should recycle because it protects our planet for future generations. Governments should also encourage recycling by making it easy and free for all citizens.`,
+   ar:`أهمية إعادة التدوير
+إعادة التدوير من أهم الأشياء التي يمكننا فعلها لحماية بيئتنا. عندما نُعيد تدوير المواد مثل الورق والبلاستيك والزجاج، نقلل كمية النفايات.
+أولاً، إعادة التدوير تساعد في الحفاظ على الموارد الطبيعية. مثلاً، إعادة تدوير الورق تعني قطع أشجار أقل. ثانياً، تقلل التلوث لأن حرق النفايات يسبب غازات ضارة.
+في الختام، يجب على الجميع إعادة التدوير لأنه يحمي كوكبنا للأجيال القادمة.`},
+  {title:"Our natural resources",words:"100–120",
+   prompt:"Q/ Write 100–120 words about the importance of protecting our natural resources.",
+   model:`Protecting Our Natural Resources
+Natural resources are very important for all living things on Earth. They include water, air, oil, trees, and solar energy. We must protect them because some resources, like oil, are non-renewable — they will run out one day.
+Firstly, we should use renewable energy sources like solar power and wind energy instead of fossil fuels. Secondly, we must stop deforestation because trees clean the air and provide homes for animals. Furthermore, we should reduce pollution by recycling and using less plastic.
+In conclusion, protecting our natural resources is everyone's responsibility. If we do not act now, future generations will not have enough resources to live.`,
+   ar:`حماية مواردنا الطبيعية
+الموارد الطبيعية مهمة جداً لجميع الكائنات الحية على الأرض. تشمل الماء والهواء والنفط والأشجار والطاقة الشمسية. يجب أن نحميها لأن بعض الموارد، مثل النفط، غير متجددة وستنفد يوماً ما.
+أولاً، يجب أن نستخدم مصادر الطاقة المتجددة مثل الطاقة الشمسية وطاقة الرياح بدلاً من الوقود الأحفوري. ثانياً، يجب أن نوقف قطع الغابات. علاوة على ذلك، يجب أن نقلل التلوث.
+في الختام، حماية مواردنا الطبيعية مسؤولية الجميع.`}
+ ]};
+
+const UNITS_ALL=[U1,U2,U3,U4,U5,U6,U7,U8];
+
+// LITERATURE
+const PP_CHARS=[
+  {name:"Elizabeth Bennet",role:"البطلة الرئيسية",facts:["ذكية حادة الذهن، ذات روح مرحة وحيوية","تسمع إهانة دارسي لها وتجد الأمر مضحكاً","مستقلة، لا تتحمل الغرور","ترفض خطبة دارسي الأولى بغضب","تكتشف خطأها في تصديق ويكهام وتغير نظرتها لدارسي","تقبل خطبة دارسي الثانية"],src:"ملزمة كبرياء وهوى / ك.النشاط ص 101–120"},
+  {name:"Mr. Darcy",role:"البطل الرئيسي",facts:["غني وسيم لكنه يبدو متعجرفاً","يرفض الرقص مع إليزابيث","ينجذب لإليزابيث تدريجياً","يتقدم لإليزابيث ويذكر فقرها — فترفضه","يكتب رسالة يشرح فيها حقيقة ويكهام","يساعد عائلة بينيت سراً ويتقدم للمرة الثانية"],src:"ملزمة كبرياء وهوى"},
+  {name:"Mr. & Mrs. Bennet",role:"الوالدان",facts:["Mrs. Bennet: مهووسة بتزويج بناتها الخمس","Mr. Bennet: رجل ذكي ساخر يحب العزلة","يفضّل ابنته إليزابيث لذكائها"],src:"ملزمة كبرياء وهوى ص 2–8"},
+  {name:"Mr. Wickham",role:"الشرير المتنكر",facts:["ضابط شاب وسيم ولطيف في ظاهره","يروي لإليزابيث قصة كاذبة عن دارسي","خدّاع، يبحث عن فائدة مادية","يهرب مع ليديا ثم يُجبر على الزواج منها"],src:"ملزمة كبرياء وهوى ص 26–36"}
+];
+const PP_EVENTS=[
+  {t:"القسم 1 — اللقاء الأول في الحفلة",d:"دارسي يرفض الرقص مع إليزابيث ويقول: 'ليست جميلة بما يكفي لي'. إليزابيث تجد الأمر مضحكاً.",src:"ك.النشاط ص 170–171"},
+  {t:"القسم 2 — إليزابيث تزور جين المريضة",d:"إليزابيث تمشي في الوحل لزيارة أختها. دارسي يُثني على عينيها ويثير غيرة كارولاين.",src:"ك.النشاط ص 172–173"},
+  {t:"القسم 3–4 — ويكهام وخداعه",d:"إليزابيث تلتقي بويكهام الذي يروي قصة مزورة عن دارسي. تُصدقه بسهولة.",src:"ك.النشاط ص 174–175"},
+  {t:"القسم 5 — خطبة دارسي الأولى",d:"دارسي يتقدم لإليزابيث ويذكر فقرها. ترفضه بغضب وتتهمه بظلم ويكهام.",src:"ك.النشاط ص 176–177"},
+  {t:"القسم 6 — رسالة دارسي والتحول",d:"دارسي يكتب رسالة يشرح حقيقة ويكهام. إليزابيث تُدرك خطأها وتزور قصر دارسي.",src:"ك.النشاط ص 178–179"},
+  {t:"الخاتمة — الخطبة الثانية والزواج",d:"دارسي يساعد عائلة بينيت سراً. يتقدم للمرة الثانية — فتقبله. بينغلي يتزوج جين.",src:"ملزمة كبرياء وهوى ص 40–47"}
+];
+const AY_CHARS=[
+  {name:"Rosalind",role:"البطلة الرئيسية",facts:["ابنة الدوق سينيور — تقع في حب أورلاندو","يُبعدها عمها فتهرب إلى غابة أردن","تتنكر باسم 'غانيميد'","تختبر حب أورلاندو من خلال التنكر","تكشف عن هويتها وتتزوج أورلاندو"],src:"ملزمة كما تشاء"},
+  {name:"Orlando",role:"البطل الرئيسي",facts:["الابن الأصغر للسير روالند — يعامله أخوه بقسوة","يفوز بمباراة المصارعة ويقع في حب روزاليند","يهرب ويعلّق قصائد عن روزاليند على الأشجار","ينقذ أخاه أوليفر من لبؤة جائعة"],src:"ملزمة كما تشاء ص 8–35"},
+  {name:"Oliver & Celia",role:"الأخ وابنة العم",facts:["Oliver: يُسيء معاملة أورلاندو ويتحول بعد إنقاذه","Celia: تتبع روزاليند وتتنكر باسم 'أليينا'","يقع في حب بعضهما"],src:"ملزمة كما تشاء"},
+  {name:"Duke Frederick & Touchstone",role:"الدوق المغتصب والمهرج",facts:["Duke Frederick: اغتصب العرش ونفى أخاه","يتحول دينياً ويعيد الحق للجميع","Touchstone: مهرج البلاط الذكي — يرافقهما"],src:"ملزمة كما تشاء ص 5–36"}
+];
+const AY_EVENTS=[
+  {t:"Section 1 — الصراع والمصارعة",d:"أوليفر يُسيء لأورلاندو. أورلاندو يفوز بمباراة المصارعة. روزاليند وأورلاندو يقعان في الحب فوراً.",src:"ك.النشاط ص 180–181"},
+  {t:"Section 2 — الهروب إلى الغابة",d:"فريدريك يُبعد روزاليند. روزاليند تتنكر باسم 'غانيميد'، سيليا باسم 'أليينا'.",src:"ك.النشاط ص 182–183"},
+  {t:"Sections 3–4 — القصائد والتنكر",d:"أورلاندو يعلّق قصائد على الأشجار. روزاليند (غانيميد) تعرض 'علاج مرض الحب'. فيبي تقع في حب 'غانيميد'!",src:"ك.النشاط ص 184–189"},
+  {t:"Section 5 — الإنقاذ والتحول",d:"لبؤة وثعبان يهاجمان أوليفر. أورلاندو ينقذه. أوليفر يتحول ويقع في حب أليينا.",src:"ك.النشاط ص 188–189"},
+  {t:"Section 6 — الزواج الرباعي",d:"روزاليند تكشف عن هويتها. ظهور هايمن إله الزواج. أربعة أزواج: أورلاندو+روزاليند، أوليفر+سيليا، سيلفيوس+فيبي، تاتشستون+أودري.",src:"ك.النشاط ص 190–192"}
+];
+
+const QUIZ=[
+  {q:"While I ___, the phone rang.",opts:["studied","was studying","am studying"],a:1,
+   why:"الماضي المستمر للحدث الطويل الذي يقاطعه حدث آخر بالماضي البسيط."},
+  {q:"The film was so ___ that I fell asleep.",opts:["bored","boring","bore"],a:1,
+   why:"الفيلم (غير عاقل) = السبب → نختار -ing (boring)."},
+  {q:"He drives the car ___.",opts:["careful","carefully","care"],a:1,
+   why:"يصف الفعل (drives) → نستخدم الظرف المنتهي بـ -ly: carefully."},
+  {q:"Smoking is terrible. You should give ___ it.",opts:["up it","it up","it"],a:1,
+   why:"المفعول به ضمير → يجب كتابه بين الفعل وحرف الجر: give it up."},
+  {q:"The opposite of polite is ___.",opts:["unpolite","impolite","inpolite"],a:1,
+   why:"polite تبدأ بـ p → نضع البادئة im: impolite."},
+  {q:"We need a ___ more oranges. (little/few)",opts:["little","few","much"],a:1,
+   why:"oranges = اسم معدود له جمع → نستخدم few."},
+  {q:"We need a ___ more fruit. (little/few)",opts:["few","little","many"],a:1,
+   why:"fruit = اسم غير معدود → نستخدم little."},
+  {q:"She didn't ___ be so thin.",opts:["used to","use to","uses to"],a:1,
+   why:"النفي: didn't use to (بدون d في use — لأن didn't تحمل البنية الماضية)."},
+  {q:"Life is not as ___ as it used to be.",opts:["easy","easier","easiest"],a:0,
+   why:"الصيغة: not as + صفة عادية (easy) + as + ضمير + used to be."},
+  {q:"'…the most important meal of the day.' → ___",opts:["Eat breakfast.","Never miss breakfast.","Don't eat breakfast."],a:1,
+   why:"النهي من الامتناع + نصيحة بعدم تفويت الإفطار: Never miss breakfast."}
+];
+
+// ═══════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+function animOut(el,cb){
+  el.style.transition='opacity .16s,transform .16s';
+  el.style.opacity='0';el.style.transform='translateY(-7px)';
+  setTimeout(()=>{el.style.transition='';el.style.opacity='';el.style.transform='';cb();},180);
+}
+function goHome(){
+  const panel=document.getElementById('contentPanel');
+  if(panel.hidden)return;
+  animOut(panel,()=>{
+    panel.hidden=true;
+    ['homeView','heroSection'].forEach(id=>{
+      const el=document.getElementById(id);el.hidden=false;
+      el.classList.remove('fu');void el.offsetWidth;el.classList.add('fu');
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+}
+const TITLES={units:"الوحدات",grammar:"القواعد",exercises:"التمارين",vocabulary:"المفردات",literature:"الأدب",tests:"الاختبار",stats:"إحصائي",search:"البحث"};
+
+function showSection(key){
+  const panel=document.getElementById('contentPanel');
+  const homeV=document.getElementById('homeView');
+  const heroS=document.getElementById('heroSection');
+  document.getElementById('bc').textContent=TITLES[key]||'';
+  const build=()=>{
+    _build(key);panel.hidden=false;
+    panel.classList.remove('fu');void panel.offsetWidth;panel.classList.add('fu');
+    panel.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  if(!homeV.hidden){animOut(homeV,()=>{homeV.hidden=true;heroS.hidden=true;build();});}
+  else if(!panel.hidden){animOut(panel,()=>build());}
+  else build();
+}
+
+// ── GRAMMAR CARD ──
+function grCard(key,idx){
+  const x=GR[key];if(!x)return'';
+  return`<details class="gc fu" style="animation-delay:${(idx||0)*.04}s">
+    <summary><span class="g-badge">${x.u}</span><b>${esc(x.t)}</b>
+    <span class="g-meta">${esc(x.src)}</span></summary>
+    <div class="gb">
+      <div class="g-art">${esc(x.ar)}</div>
+      <div class="g-rulebox"><div class="g-ruletext">${esc(x.rule)}</div></div>
+      <div class="g-en">${esc(x.en)}</div>
+      ${x.tr?`<div class="g-tr">🔁 ${esc(x.tr)}</div>`:''}
+      <small class="g-src">📌 ${esc(x.src)}</small>
+    </div></details>`;
+}
+
+// ── EXERCISE CARD ──
+function exCard(b){
+  return`<details class="ec">
+    <summary><span class="e-ltr">${esc(b.lbl)}</span>
+    <span class="e-h">${esc(b.h||b.les)}</span>
+    <span class="e-m">${esc(b.les)} · ص ${b.p}</span></summary>
+    <div class="eb"><pre>${esc(b.txt)}</pre></div>
+  </details>`;
+}
+
+// ── MEANINGS TABLE ──
+function meaningsHtml(items){
+  if(!items||!items.length)return'';
+  return`<div class="mqbox fu">
+    <div class="mqhead">📝 أسئلة وزارية — المعاني والتطبيق</div>
+    <div class="mqbody">
+      <table class="mqtbl">
+        <tr><th>السؤال</th><th>الإجابة</th></tr>
+        ${items.map(m=>`<tr><td>${esc(m.q)}</td><td>${esc(m.a)}</td></tr>`).join('')}
+      </table>
+    </div></div>`;
+}
+
+// ── VOCAB GRID ──
+function vocabHtml(lessons){
+  if(!lessons||!lessons.length)return'';
+  return lessons.map(sec=>`
+    <div class="vsec">${esc(sec.l)}</div>
+    <div class="vgrid">
+      ${sec.words.map((x,i)=>`<div class="vc fu" style="animation-delay:${i*.02}s">
+        <span>VOCAB</span><b dir="ltr">${esc(x.w)}</b><small>${esc(x.m)}</small>
+      </div>`).join('')}
+    </div>`).join('');
+}
+
+// ── WRITING CARDS ──
+function writingHtml(items){
+  if(!items||!items.length)return'';
+  return items.map(w=>`
+    <div class="wcard fu">
+      <details>
+        <summary class="wcard-head">
+          <span class="wcard-ico">✍️</span>
+          <span class="wcard-h">${esc(w.title)}</span>
+          <span style="font-size:11px;color:var(--mu);font-family:'Poppins',Arial,sans-serif">${w.words} words</span>
+        </summary>
+        <div class="wcard-body">
+          <div class="wcard-prompt">${esc(w.prompt)}</div>
+          <pre>${esc(w.model)}</pre>
+          <div class="wcard-ar">${esc(w.ar)}</div>
+        </div>
+      </details>
+    </div>`).join('');
+}
+
+// ── BUILD ──
+let curUnit=1,curSub='lessons';
+
+function _build(key){
+  const pb=document.getElementById('pb');
+  if(key==='units'){
+    let h=`<h2 class="pt fu">الوحدات الدراسية</h2>
+    <p class="ps fu d1">اختر وحدة لعرض مادتها الكاملة. <span style="color:var(--ok);font-weight:800">الوحدة الأولى مكتملة بشكل كامل.</span> باقي الوحدات قيد الإضافة.</p>
+    <div class="utabs" id="unitTabs">`;
+    UNITS_ALL.forEach((u,i)=>{
+      h+=`<button class="utab fu${i===0?' on':''}" style="animation-delay:${i*.04}s" onclick="showUnit(${u.n},this)">
+        <b>Unit ${u.n}</b><small>${esc(u.ar)}${' ✅'}</small>
+      </button>`;
+    });
+    h+='</div><div id="unitContent"></div>';
+    pb.innerHTML=h;
+    showUnit(1,document.querySelectorAll('.utab')[0]);
+    return;
+  }
+  if(key==='grammar'){
+    let h=`<h2 class="pt fu">القواعد</h2>
+    <p class="ps fu d1">شروحات القواعد من الملازم الرسمية حصراً — جميع الوحدات (26 موضوعاً).</p>
+    <div class="tools fu d2">
+      <input id="gS" placeholder="ابحث عن موضوع..." oninput="rGr()">
+      <select id="gU" onchange="rGr()"><option value="all">كل القواعد</option>
+        ${UNITS_ALL.filter(u=>!u._pending).map(u=>`<option value="${u.n}">Unit ${u.n} · ${esc(u.ar)}</option>`).join('')}
+      </select>
+    </div>
+    <div id="gC" class="cntxt fu d3"></div><div id="gR"></div>`;
+    pb.innerHTML=h;rGr();return;
+  }
+  if(key==='exercises'){
+    let h=`<h2 class="pt fu">التمارين</h2>
+    <p class="ps fu d1">تمارين مجمّعة حسب الموضوع. جميع الوحدات الثماني مكتملة.</p>
+    <div class="tools fu d2">
+      <input id="eS" placeholder="ابحث في التمارين..." oninput="rEx()">
+      <select id="eU" onchange="rEx()"><option value="all">كل الوحدات</option>
+        ${UNITS_ALL.map(u=>`<option value="${u.n}">Unit ${u.n} · ${esc(u.ar)}</option>`).join('')}
+      </select>
+    </div>
+    <div id="eC" class="cntxt fu d3"></div><div id="eR"></div>`;
+    pb.innerHTML=h;rEx();return;
+  }
+  if(key==='vocabulary'){
+    let h=`<h2 class="pt fu">المفردات</h2>
+    <p class="ps fu d1">مفردات جميع الوحدات الثماني مقسّمة حسب الوحدة والدرس.</p>
+    <div class="tools fu d2">
+      <input id="vS" placeholder="ابحث عن كلمة أو معنى..." oninput="rV()">
+      <select id="vU" onchange="rV()"><option value="all">كل الوحدات</option>
+        ${UNITS_ALL.map(u=>`<option value="${u.n}">Unit ${u.n} · ${esc(u.ar)}</option>`).join('')}
+      </select>
+    </div>
+    <div id="vC" class="cntxt fu d3"></div><div id="vR"></div>`;
+    pb.innerHTML=h;rV();return;
+  }
+  if(key==='literature'){
+    let h=`<h2 class="pt fu">الأدب</h2>
+    <p class="ps fu d1">دليل الأدب الكامل من الملازم الرسمية.</p>
+    <div class="ltabs2 fu d2">
+      <button class="ltab2 on" onclick="sLV('chars',this)">الشخصيات</button>
+      <button class="ltab2" onclick="sLV('events',this)">تسلسل الأحداث</button>
+      <button class="ltab2" onclick="sLV('review',this)">بطاقات المراجعة</button>
+    </div>
+    <div class="lworks fu d3">
+      <button class="lwork on" onclick="sLW('all',this)"><b>العملان</b><small>رواية + مسرحية</small></button>
+      <button class="lwork" onclick="sLW('pp',this)"><b>Pride and Prejudice</b><small>Jane Austen · 1813</small></button>
+      <button class="lwork" onclick="sLW('ay',this)"><b>As You Like It</b><small>Shakespeare · 1599</small></button>
+    </div><div id="litR"></div>`;
+    pb.innerHTML=h;litView='chars';litWork='all';rLit();return;
+  }
+  if(key==='tests'){
+    pb.innerHTML=`<h2 class="pt fu">الاختبار التدريبي</h2>
+    <p class="ps fu d1">10 أسئلة من مادة الوحدة الأولى بأسلوب الامتحانات الوزارية.</p><div id="qB"></div>`;
+    rQuiz();return;
+  }
+  if(key==='stats'){
+    pb.innerHTML=`<h2 class="pt fu">إحصائي</h2>
+    <div class="sg">
+      ${(()=>{const gN=Object.keys(GR).length,gR=UNITS_ALL.reduce((n,u)=>n+u.gr.length,0),mN=UNITS_ALL.reduce((n,u)=>n+u.meanings.length,0),wN=UNITS_ALL.reduce((n,u)=>n+u.writing.length,0),vN=UNITS_ALL.reduce((n,u)=>n+u.vocab.reduce((a,v)=>a+v.words.length,0),0),eN=UNITS_ALL.reduce((n,u)=>n+u.exercises.length,0);return [[gN+"","موضوعاً قواعدياً ("+gR+" مرجعاً)"],["8","وحدات كاملة"],[mN+"","سؤال وزاري مع الحلول"],[wN+"","إنشاءً بنموذج"],[vN+"","مفردة"],[eN+"","مجموعة تمارين"]].map(([n,l],i)=>`
+      <div class="scard pop" style="animation-delay:${i*.07}s"><b>${n}</b><small>${l}</small></div>`).join('')})()}
+    </div>
+    <div class="about fu d4"><h4>حول التطبيق</h4>
+    <table>
+      <tr><td>الاسم</td><td>إنكليزي السادس الإعدادي</td></tr>
+      <tr><td>الإصدار</td><td>1.5.1 (versionCode 7)</td></tr>
+      <tr><td>المعرّف</td><td style="font-family:'Poppins',Arial,sans-serif;font-size:12px">com.sixth.grammar</td></tr>
+      <tr><td>المنهج</td><td>English for Iraq · 8 وحدات + الأدب</td></tr>
+      <tr><td>الحالة</td><td>يعمل دون اتصال بالكامل · القواعد مكتملة (21 موضوعاً)</td></tr>
+      <tr><td>المعلم</td><td>الأستاذ علي معز الشلاه</td></tr>
+      <tr><td>المركز</td><td>مكتب الوسام · الحلة، بابل</td></tr>
+      <tr><td>المحتوى</td><td>من الملازم الرسمية حصراً</td></tr>
+      <tr><td>الحالة</td><td>✅ جميع الوحدات 1–8 مكتملة بشكل كامل</td></tr>
+    </table><span class="vbadge">v1.5.1 · versionCode 7</span></div>`;
+    return;
+  }
+  if(key==='search'){
+    pb.innerHTML=`<h2 class="pt fu">البحث</h2>
+    <p class="ps fu d1">ابحث في تمارين الوحدة الأولى.</p>
+    <input class="sbox fu d2" style="width:100%;margin-bottom:12px" placeholder="اكتب كلمة أو جملة..."
+      oninput="document.getElementById('eS')&&(document.getElementById('eS').value=this.value);rEx()">
+    <div id="eC" class="cntxt"></div><div id="eR"></div>`;
+    rEx();return;
+  }
+}
+
+// ── UNIT VIEW ──
+function showUnit(n,btn){
+  curUnit=n;curSub='lessons';
+  document.querySelectorAll('.utab').forEach(x=>x.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+  _renderUnit();
+}
+function showUnitSub(sub,btn){
+  curSub=sub;
+  document.querySelectorAll('.stab').forEach(x=>x.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+  _renderUnit();
+}
+function _renderUnit(){
+  const u=UNITS_ALL.find(x=>x.n===curUnit);
+  const uc=document.getElementById('unitContent');if(!u||!uc)return;
+
+  if(false){
+    uc.innerHTML=`<div class="uc-box"><div class="uc-title">Unit ${u.n}: ${esc(u.t)}</div>
+    <div class="uc-sub">${esc(u.ar)}</div>
+    <div class="empty" style="margin-top:20px">⏳ هذه الوحدة قيد الإعداد. سيتم إضافتها قريباً بنفس أسلوب الوحدة الأولى الكاملة.</div></div>`;
+    return;
+  }
+
+  const nex=u.exercises?.length||0,nwr=u.writing?.length||0;
+  const nvoc=u.vocab?.reduce((a,s)=>a+s.words.length,0)||0,nmq=u.meanings?.length||0;
+
+  let h=`<div class="uc-box">
+    <div class="uc-title">Unit ${u.n}: ${esc(u.t)}</div>
+    <div class="uc-sub">${esc(u.ar)} · ${u.lessons.length} دروس · ${u.gr.length} مواضيع قواعدية · ${nex} تمريناً · ${nvoc} مفردة · ${nmq} معنى وزاري · ${nwr} إنشاء</div>
+    <div class="subtabs">
+      <button class="stab${curSub==='lessons'?' on':''}" onclick="showUnitSub('lessons',this)">📋 الدروس <span class="cbadge">${u.lessons.length}</span></button>
+      <button class="stab${curSub==='grammar'?' on':''}" onclick="showUnitSub('grammar',this)">📐 القواعد <span class="cbadge">${u.gr.length}</span></button>
+      <button class="stab${curSub==='exercises'?' on':''}" onclick="showUnitSub('exercises',this)">✏️ التمارين <span class="cbadge">${nex}</span></button>
+      <button class="stab${curSub==='vocab'?' on':''}" onclick="showUnitSub('vocab',this)">🔤 المفردات <span class="cbadge">${nvoc}</span></button>
+      <button class="stab${curSub==='meanings'?' on':''}" onclick="showUnitSub('meanings',this)">📝 المعاني <span class="cbadge">${nmq}</span></button>
+      <button class="stab${curSub==='writing'?' on':''}" onclick="showUnitSub('writing',this)">✍️ الإنشاء <span class="cbadge">${nwr}</span></button>
+    </div>`;
+
+  if(curSub==='lessons'){
+    h+=`<table class="ltbl">
+      <tr><th>#</th><th>عنوان الدرس — العنوان العربي</th><th>ص</th></tr>
+      ${u.lessons.map((l,i)=>`<tr><td>${i+1}</td><td>${esc(l.t)}${l.ar?` — <span style="color:var(--mu)">${esc(l.ar)}</span>`:''}</td><td>${l.p}</td></tr>`).join('')}
+    </table>
+    <div style="background:var(--paper);border-radius:12px;padding:14px;font-size:13px;color:#3a526b">
+      <b style="color:var(--nv);display:block;margin-bottom:8px">مواضيع القواعد في هذه الوحدة (${u.gr.length} موضوع):</b>
+      ${u.gr.map(g=>`<span style="display:inline-block;background:var(--tllt);color:var(--tl);border-radius:20px;padding:4px 11px;margin:3px;font-size:12px;font-weight:700">${esc(GR[g]?.ar||g)}</span>`).join('')}
+    </div>`;
+  } else if(curSub==='grammar'){
+    h+=u.gr.map((g,i)=>grCard(g,i)).join('')||'<div class="empty">لا توجد قواعد.</div>';
+  } else if(curSub==='exercises'){
+    if(nex){
+      h+=`<div class="exgroup"><div class="exhead"><b>تمارين Unit ${u.n} — ${esc(u.t)}</b><span class="expill">${nex} تمرين</span></div>
+      ${u.exercises.map(b=>exCard(b)).join('')}</div>`;
+    } else h+='<div class="empty">لا توجد تمارين.</div>';
+  } else if(curSub==='vocab'){
+    h+=nvoc?vocabHtml(u.vocab):'<div class="empty">لا توجد مفردات.</div>';
+  } else if(curSub==='meanings'){
+    h+=nmq?meaningsHtml(u.meanings):'<div class="empty">لا توجد أسئلة وزارية.</div>';
+  } else if(curSub==='writing'){
+    h+=nwr?writingHtml(u.writing):'<div class="empty">لا توجد إنشاءات.</div>';
+  }
+
+  h+='</div>';
+  uc.innerHTML=h;
+}
+
+// ── GRAMMAR ALL ──
+function rGr(){
+  const q=(document.getElementById('gS')?.value||'').toLowerCase().trim();
+  const u=document.getElementById('gU')?.value||'all';
+  const all=Object.keys(GR);
+  const arr=all.filter(k=>{
+    const x=GR[k];
+    return(u==='all'||String(x.u)===u)&&(!q||[x.t,x.ar,x.rule,x.en].join(' ').toLowerCase().includes(q));
+  });
+  const c=document.getElementById('gC');if(c)c.textContent=`${arr.length} موضوع من أصل ${all.length}`;
+  document.getElementById('gR').innerHTML=arr.map((k,i)=>grCard(k,i)).join('')||'<div class="empty">لا توجد نتيجة.</div>';
+}
+
+// ── EXERCISES ALL ──
+function rEx(){
+  const q=(document.getElementById('eS')?.value||'').toLowerCase().trim();
+  const un=document.getElementById('eU')?.value||'all';
+  let all=[];
+  UNITS_ALL.forEach(u=>{
+    if(un!=='all'&&String(u.n)!==un)return;
+    (u.exercises||[]).forEach(e=>{
+      if(!q||[e.h||'',e.txt,e.les].join(' ').toLowerCase().includes(q))
+        all.push({...e,uN:u.n,uAr:u.ar});
+    });
+  });
+  const c=document.getElementById('eC');if(c)c.textContent=`${all.length} تمريناً`;
+  if(!all.length){document.getElementById('eR').innerHTML='<div class="empty">لا توجد نتيجة.</div>';return;}
+  const gr=new Map();
+  all.forEach(b=>{const k=`U${b.uN}`;if(!gr.has(k))gr.set(k,{...b,items:[]});gr.get(k).items.push(b);});
+  document.getElementById('eR').innerHTML=[...gr.values()].map((g,i)=>`
+    <div class="exgroup fu" style="animation-delay:${i*.04}s">
+      <div class="exhead"><b>Unit ${g.uN} · ${esc(g.uAr)}</b><span class="expill">${g.items.length} تمرين</span></div>
+      ${g.items.map(b=>exCard(b)).join('')}
+    </div>`).join('');
+}
+
+// ── VOCAB ──
+function rV(){
+  const q=(document.getElementById('vS')?.value||'').toLowerCase().trim();
+  const un=document.getElementById('vU')?.value||'all';
+  let allSecs=[];
+  UNITS_ALL.forEach(u=>{
+    if(un!=='all'&&String(u.n)!==un)return;
+    (u.vocab||[]).forEach(sec=>{
+      const words=sec.words.filter(w=>!q||(w.w+' '+w.m).toLowerCase().includes(q));
+      if(words.length)allSecs.push({...sec,words,uN:u.n});
+    });
+  });
+  const total=allSecs.reduce((a,s)=>a+s.words.length,0);
+  const c=document.getElementById('vC');if(c)c.textContent=`${total} كلمة`;
+  document.getElementById('vR').innerHTML=allSecs.length?vocabHtml(allSecs):'<div class="empty">لا توجد نتيجة.</div>';
+}
+
+// ── QUIZ ──
+function rQuiz(){
+  let i=0,sc=0;const box=document.getElementById('qB');
+  function draw(){
+    if(i>=QUIZ.length){
+      const pct=Math.round(sc/QUIZ.length*100);
+      box.innerHTML=`<div class="qcard"><div class="qres">
+        <span class="sc">${sc}/${QUIZ.length}</span>
+        <p>نسبة الإجابة الصحيحة: <b>${pct}%</b></p>
+        <p style="font-size:20px">${pct>=80?'ممتاز! 🎉':pct>=60?'جيد جداً 👍':pct>=40?'جيد. راجع القواعد 📖':'استمر في المراجعة 📚'}</p>
+        <button class="btn-p" onclick="rQuiz()">إعادة الاختبار</button>
+      </div></div>`;return;
+    }
+    const x=QUIZ[i];
+    box.innerHTML=`<div class="qcard">
+      <div class="qprog">السؤال ${i+1} من ${QUIZ.length} · النتيجة: ${sc}</div>
+      <p class="qq">${esc(x.q)}</p>
+      <div class="qopts">${x.opts.map((o,j)=>`<button class="qo" data-i="${j}">${esc(o)}</button>`).join('')}</div>
+      <div id="qfb"></div></div>`;
+    box.querySelectorAll('.qo').forEach(b=>b.onclick=()=>{
+      if(box.dataset.done==='1')return;box.dataset.done='1';
+      const ok=Number(b.dataset.i)===x.a;if(ok)sc++;
+      box.querySelectorAll('.qo').forEach((z,j)=>{z.disabled=true;if(j===x.a)z.classList.add('ok');else if(z===b)z.classList.add('no');});
+      document.getElementById('qfb').innerHTML=`
+        <div class="qfb">${ok?'✅ <b>إجابة صحيحة!</b>':'❌ <b>الإجابة الصحيحة:</b> '+esc(x.opts[x.a])}<br>${esc(x.why)}</div>
+        <button class="btn-p" style="margin-top:11px" id="nQ">${i===QUIZ.length-1?'عرض النتيجة النهائية':'السؤال التالي ←'}</button>`;
+      document.getElementById('nQ').onclick=()=>{i++;box.dataset.done='0';draw();};
+    });
+    box.dataset.done='0';
+  }
+  draw();
+}
+
+// ── LITERATURE ──
+let litView='chars',litWork='all';
+function sLV(v,btn){litView=v;document.querySelectorAll('.ltab2').forEach(x=>x.classList.remove('on'));if(btn)btn.classList.add('on');rLit();}
+function sLW(w,btn){litWork=w;document.querySelectorAll('.lwork').forEach(x=>x.classList.remove('on'));if(btn)btn.classList.add('on');rLit();}
+function rLit(){
+  const out=document.getElementById('litR');if(!out)return;
+  const isRev=litView==='review',isEv=litView==='events';
+  let html='';
+  const renderW=(title,yr,chars,events,src)=>{
+    const show=litWork==='all'||(litWork==='pp'&&title.includes('Pride'))||(litWork==='ay'&&title.includes('You'));
+    if(!show)return'';
+    const items=isRev?[...chars,...events]:isEv?events:chars;
+    const cards=items.map((item,idx)=>{
+      const content=item.facts?`<ul>${item.facts.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:`<p>${esc(item.d)}</p>`;
+      return`<article class="lcard fu" style="animation-delay:${idx*.04}s">
+        <div class="lct">${isEv?`<span class="lstep">${idx+1}</span>`:''}<div>
+          ${isRev?`<small style="color:var(--tl);font-size:10px;font-weight:800;font-family:'Poppins',Arial,sans-serif">${item.facts?'شخصية':'حدث'}</small>`:''}
+          <b>${esc(item.name||item.t)}</b>${item.role?`<small>${esc(item.role)}</small>`:''}
+        </div></div>
+        ${isRev?`<button class="rvbtn" onclick="const a=this.nextElementSibling;a.hidden=!a.hidden;this.textContent=a.hidden?'▶ اعرض':'▼ أخفِ'">▶ اعرض</button><div class="rvans" hidden>${content}</div>`:content}
+        <div class="lsrc-box"><span>${esc(item.src||src)}</span></div>
+      </article>`;
+    });
+    return`<div class="lsec"><div class="lsec-h"><div>
+      <b dir="ltr">${esc(title)}</b><small>${yr} · ${title.includes('You')?'مسرحية شكسبير':'رواية جين أوستن'}</small>
+    </div><em>${esc(src)}</em></div>
+    <div class="lcards">${cards.join('')}</div></div>`;
+  };
+  html+=renderW('Pride and Prejudice','1813',PP_CHARS,PP_EVENTS,'ملزمة كبرياء وهوى / ك.النشاط ص 101–120');
+  html+=renderW('As You Like It','1599',AY_CHARS,AY_EVENTS,'ملزمة كما تشاء / ك.النشاط ص 111–120');
+  out.innerHTML=html+`<div class="lit-note fu">📌 <b>ملاحظة:</b> جميع المحتوى مستند إلى الملازم الرسمية للأستاذ علي معز الشلاه.</div>`;
+}
+
+document.addEventListener('keydown',ev=>{
+  if(ev.key==='Escape'&&!document.getElementById('contentPanel').hidden)goHome();
+});
+</script>
+<a href="index.html" style="position:fixed;bottom:18px;left:18px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:999px;background:var(--nv);color:#fff;font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.25)">→ الرئيسية</a>
+</body>
+</html>
