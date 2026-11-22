@@ -72,3 +72,29 @@ main{max-width:1120px;margin:auto;padding:28px 22px 50px}.hero{background:linear
 .lit-review-summary{display:grid;gap:4px;margin:10px 0 14px;padding:11px 13px;border:1px solid #ead9ad;border-radius:10px;background:#fff8e9;color:#745b27;font-size:11px;line-height:1.8}
 .lit-review-summary b{font-size:12px;color:#785b22}
 .lit-open-note .lit-answer-cite{margin-top:10px}
+
+.lit-guide-card[hidden]{display:none!important}
+.lit-fact-list{padding-right:20px;margin:12px 0 0;color:#304b60;font-size:14px;line-height:2.05}
+.lit-fact-list>li{padding:2px 0 9px}
+.lit-fact-source{margin:5px 0 4px}
+.lit-relationship-card p,.lit-timeline-card>p{font-size:14px;line-height:2;color:#40596b;margin:10px 0}
+.lit-timeline-steps{padding-right:23px;margin:12px 0;color:#304b60;font-size:14px;line-height:2.05}
+.lit-timeline-steps>li{padding:3px 0 11px}
+.lit-overview{background:#f3f7fa;border:1px solid #dce7ee;border-radius:14px;padding:15px 17px;margin:10px 0 13px}
+.lit-overview>b{display:block;color:#173a55;font-size:15px;margin-bottom:7px}
+.lit-overview p{margin:0;color:#40596b;font-size:14px;line-height:2}
+.lit-source-map{background:#f7fafc;border:1px solid #dce7ee;border-radius:12px;padding:14px;margin:10px 0 14px}
+.lit-source-map>b{display:block;color:#173a55;font-size:15px;margin-bottom:4px}
+.lit-source-map>small{display:block;color:#708394;font-size:10px;line-height:1.8;overflow-wrap:anywhere}
+.lit-source-map-scroll{overflow-x:auto;margin-top:10px}
+.lit-source-map table{border-collapse:collapse;width:100%;min-width:360px;font-size:12px;text-align:center}
+.lit-source-map th,.lit-source-map td{border:1px solid #dce7ee;padding:8px 10px}
+.lit-source-map th{background:#eaf1f5;color:#24465d}
+.lit-source-map td{background:#fff;color:#40596b}
+.lit-source-map p{margin:10px 0 0;font-size:11px;line-height:1.8;color:#61798a}
+.lit-source-chip{display:block;background:#f2f7fa;border-right:3px solid #4b9b9c;border-radius:7px;padding:7px 9px;margin:5px 0;color:#28566a;font-size:11px;line-height:1.7;overflow-wrap:anywhere}
+.lit-source-chip small{display:block;color:#687f8e;font-size:10px;line-height:1.65;margin-top:2px}
+.lit-source-note-card{border-right:3px solid #b38b42}
+.literature-guide-tools{display:grid;grid-template-columns:1fr;gap:4px;margin:12px 0}
+.literature-guide-tools .searchbox{width:100%;min-height:46px}
+.literature-guide-tools .exercise-count{margin:0 2px 5px;font-size:11px}

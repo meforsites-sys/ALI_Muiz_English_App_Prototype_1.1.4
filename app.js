@@ -350,8 +350,9 @@ function showSection(key){
  } else if(key==="literature"){
  const lit=window.LITERATURE_DATA||[];
  html+='<p class="panel-sub">دليل الأدب وحلول Literature Focus للأقسام الاثني عشر في Pride and Prejudice وAs You Like It. تمت مراجعة الإجابات بمفتاح دليل المدرس ومقابلتها بمقتطفات كتاب الطالب؛ ويظهر مرجع كتاب النشاط والمقتطف ومفتاح المدرس تحت كل إجابة، مع تنبيه المواضع التي تحتاج مراجعة بشرية.</p>';
- html+=`<div class="lit-guide-tabs"><button class="lit-guide-tab active" data-view="characters" onclick="showLiteratureGuide('characters',this)">الشخصيات والعلاقات</button><button class="lit-guide-tab" data-view="events" onclick="showLiteratureGuide('events',this)">تسلسل الأحداث</button><button class="lit-guide-tab" data-view="review" onclick="showLiteratureGuide('review',this)">بطاقات المراجعة</button><button class="lit-guide-tab" data-view="questions" onclick="showLiteratureGuide('questions',this)">أسئلة كتاب النشاط</button><button class="lit-guide-tab" data-view="answers" onclick="showLiteratureGuide('answers',this)">حلول التمارين</button></div>`;
+ html+=`<div class="lit-guide-tabs"><button class="lit-guide-tab active" data-view="characters" onclick="showLiteratureGuide('characters',this)">الشخصيات</button><button class="lit-guide-tab" data-view="relationships" onclick="showLiteratureGuide('relationships',this)">العلاقات</button><button class="lit-guide-tab" data-view="events" onclick="showLiteratureGuide('events',this)">ملخص وتسلسل الأحداث</button><button class="lit-guide-tab" data-view="review" onclick="showLiteratureGuide('review',this)">بطاقات المراجعة</button><button class="lit-guide-tab" data-view="source-notes" onclick="showLiteratureGuide('source-notes',this)">ملاحظات التوثيق</button><button class="lit-guide-tab" data-view="questions" onclick="showLiteratureGuide('questions',this)">أسئلة كتاب النشاط</button><button class="lit-guide-tab" data-view="answers" onclick="showLiteratureGuide('answers',this)">حلول التمارين</button></div>`;
  html+=`<div class="lit-work-grid"><button class="lit-work active" onclick="setLiteratureWork('all',this)"><b>العملان</b><small>رواية ومسرحية</small></button><button class="lit-work" onclick="setLiteratureWork('Pride and Prejudice',this)"><b>Pride and Prejudice</b><small>Jane Austen</small></button><button class="lit-work" onclick="setLiteratureWork('As You Like It',this)"><b>As You Like It</b><small>William Shakespeare</small></button></div>`;
+ html+='<div class="literature-guide-tools"><input id="literatureGuideSearch" class="searchbox" placeholder="ابحث عن شخصية أو علاقة أو حدث أو ملحوظة مصدر..." oninput="filterLiteratureGuide()"><div id="literatureGuideCount" class="exercise-count" aria-live="polite"></div></div>';
  html+='<div id="literatureGuideResults"></div><div id="literatureQuestions" hidden><div id="literatureResults">'+lit.map(renderLiteratureCard).join('')+'</div></div><div id="literatureAnswers" hidden></div>';
  html+='<div class="lit-method-note">المصادر التي تمت مراجعتها: كتاب النشاط ص 168–191، كتاب الطالب ص 101–111 و115–125، ودليل المدرس ص 181–205. الشروح إعادة صياغة موجزة، وتظهر سبع ملاحظات للمراجعة البشرية. مهام الكتابة E بقيت مفتوحة، والأسئلة الوزارية غير مدرجة.</div>';
  } else if(key==="search"){
@@ -425,14 +426,56 @@ function filterLiteratureAnswers(){
  const count=document.getElementById('litAnswerCount');if(count)count.textContent=q?`المجموعات المطابقة: ${shown}`:'';
 }
 function toggleLiteratureAnswers(open){document.querySelectorAll('#literatureAnswers .lit-answer-exercise:not([hidden])').forEach(x=>x.open=open);}
+function literatureFormatPages(pages){
+ const p=Array.isArray(pages)?pages:(pages==null||pages===''?[]:[pages]);
+ if(!p.length)return '';
+ if(p.length===1){const s=String(p[0]);return /^\s*\d+\s*[–-]\s*\d+\s*$/.test(s)?s.trim():p[0];}
+ const nums=p.map(Number);
+ if(nums.length>1&&nums.every((n,i)=>i===0||n===nums[i-1]+1))return `${nums[0]}–${nums[nums.length-1]}`;
+ return p.join('، ');
+}
+function literatureSourceMarkup(sources){
+ return (sources||[]).map(src=>{
+  const parts=[];
+  if(src.student_book_pages?.length)parts.push(`كتاب الطالب ص ${literatureFormatPages(src.student_book_pages)}`);
+  if(src.activity_book_pages?.length)parts.push(`كتاب النشاط (موضع التمرين) ص ${literatureFormatPages(src.activity_book_pages)}`);
+  if(src.activity_pages?.length)parts.push(`كتاب النشاط ص ${literatureFormatPages(src.activity_pages)} · القسم ${src.section}`);
+  if(src.student_book_page&&!src.student_book_pages?.length)parts.push(`مقتطف كتاب الطالب ص ${src.student_book_page}`);
+  if(src.teacher_book_pages?.length)parts.push(`${src.teacher_book_role==='guidance_only'?'إرشادات دليل المدرس':'مفتاح دليل المدرس'} ص ${literatureFormatPages(src.teacher_book_pages)}`);
+  if(src.section_label)parts.push(esc(src.section_label));
+  else if(src.section&&!src.activity_pages?.length)parts.push(`Literature Focus Section ${src.section}`);
+  return `<span class="lit-source-chip">${parts.join(' · ')}${src.evidence?`<small>${esc(src.evidence)}</small>`:''}</span>`;
+ }).join('');
+}
 function renderLiteratureGuide(){
  const out=document.getElementById('literatureGuideResults');if(!out||activeLiteratureView==='questions'||activeLiteratureView==='answers')return;
  const works=(window.LITERATURE_GUIDE?.works||[]).filter(w=>activeLiteratureWork==='all'||w.work===activeLiteratureWork);
  out.innerHTML=works.map(w=>{
-  const review=activeLiteratureView==='review';
-  const items=review?[...w.characters.map(x=>({...x,reviewKind:'شخصية'})),...w.events.map(x=>({...x,name:x.title,reviewKind:'حدث'}))]:(activeLiteratureView==='characters'?w.characters:w.events);
-  return `<section class="lit-guide-work"><div class="lit-guide-workhead"><div><b dir="ltr">${esc(w.work)}</b><small>${esc(w.author)} · ${w.type==='Novel'?'رواية':'مسرحية'}</small></div><span>كتاب النشاط ص ${w.activity_range[0]}–${w.activity_range[1]}</span></div><div class="lit-guide-cards">${items.map((item,i)=>{const citations=(item.sources||[]).map(src=>`<span>كتاب النشاط ص ${src.activity_pages.join('–')} · القسم ${src.section} · مقتطف كتاب الطالب ص ${src.student_book_page}<small>${esc(src.evidence)}</small></span>`).join(''); const answer=item.facts?`<ul>${item.facts.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:`<p>${esc(item.description)}</p>`; return `<article class="lit-guide-card ${review?'lit-review-card':''}"><div class="lit-guide-title">${activeLiteratureView==='events'?`<span class="lit-step">${i+1}</span>`:''}<div><small>${review?item.reviewKind:''}</small><b>${esc(item.name||item.title)}</b>${item.role?`<small>${esc(item.role)}</small>`:''}</div></div>${review?`<button class="lit-reveal" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden;this.textContent=this.nextElementSibling.hidden?'اعرض الإجابة':'أخفِ الإجابة'">اعرض الإجابة</button><div class="lit-review-answer" hidden>${answer}</div>`:answer}<div class="lit-citations"><b>المصدر:</b>${citations}</div></article>`}).join('')}</div></section>`;
+  const head=`<div class="lit-guide-workhead"><div><b dir="ltr">${esc(w.work)}</b><small>${esc(w.author)} · ${w.type==='Novel'?'رواية':'مسرحية'}</small></div><span>كتاب النشاط ص ${w.activity_range[0]}–${w.activity_range[1]} · كتاب الطالب ص ${w.student_book_range[0]}–${w.student_book_range[1]}</span></div>`;
+  const overview=`<article class="lit-overview"><b>ملخص العمل</b><p>${esc(w.summary||'')}</p><div class="lit-citations"><b>المصدر:</b>${literatureSourceMarkup(w.summary_sources)}</div></article>`;
+  let items=[];
+  if(activeLiteratureView==='characters'){
+   items=w.characters.map((item,i)=>`<article class="lit-guide-card"><div class="lit-guide-title"><span class="lit-step">${i+1}</span><div><b>${esc(item.name)}</b><small>${esc(item.role||'')}</small></div></div><ul class="lit-fact-list">${(item.facts||[]).map(f=>`<li>${esc(typeof f==='string'?f:f.text)}${typeof f==='string'?'':`<div class="lit-fact-source">${literatureSourceMarkup(f.sources)}</div>`}</li>`).join('')}</ul>${item.role_sources?.length?`<div class="lit-citations"><b>مصدر تعريف الشخصية:</b>${literatureSourceMarkup(item.role_sources)}</div>`:''}</article>`);
+  }else if(activeLiteratureView==='relationships'){
+   items=(w.relationships||[]).map((item,i)=>`<article class="lit-guide-card lit-relationship-card"><div class="lit-guide-title"><span class="lit-step">${i+1}</span><div><b>${esc(item.from)} ↔ ${esc(item.to)}</b><small>${esc(item.kind)}</small></div></div><p>${esc(item.description)}</p><div class="lit-citations"><b>المصدر:</b>${literatureSourceMarkup(item.sources)}</div></article>`);
+  }else if(activeLiteratureView==='events'){
+   items=(w.timeline||w.events||[]).map((item,i)=>`<article class="lit-guide-card lit-timeline-card"><div class="lit-guide-title"><span class="lit-step">${item.section||i+1}</span><div><small>Literature Focus Section ${item.section||i+1}</small><b>${esc(item.title)}</b></div></div><p>${esc(item.summary||item.description||'')}</p><ol class="lit-timeline-steps">${(item.steps||[]).map(st=>`<li>${esc(st.text)}<div class="lit-fact-source">${literatureSourceMarkup(st.sources)}</div></li>`).join('')}</ol><div class="lit-citations"><b>مرجع القسم:</b>${literatureSourceMarkup(item.sources)}</div></article>`);
+  }else if(activeLiteratureView==='source-notes'){
+   items=(w.source_notes||[]).map((note,i)=>`<article class="lit-guide-card lit-source-note-card"><div class="lit-guide-title"><span class="lit-step">${i+1}</span><div><small>ملاحظة تدقيق</small><b>${esc(note.title)}</b></div></div><p>${esc(note.text)}</p><div class="lit-citations"><b>مواضع التحقق:</b>${literatureSourceMarkup(note.sources)}</div></article>`);
+  }else{
+   const reviewItems=[...w.characters.map(x=>({...x,reviewKind:'شخصية'})),...(w.relationships||[]).map(x=>({...x,name:`${x.from} ↔ ${x.to}`,facts:[{text:x.description,sources:x.sources}],reviewKind:'علاقة'})),...(w.timeline||[]).map(x=>({...x,name:x.title,facts:[{text:x.summary,sources:x.sources}],reviewKind:'حدث'}))];
+   items=reviewItems.map((item,i)=>{const facts=(item.facts||[]).map(f=>`<li>${esc(typeof f==='string'?f:f.text)}${typeof f==='string'?'':`<div class="lit-fact-source">${literatureSourceMarkup(f.sources)}</div>`}</li>`).join('');return `<article class="lit-guide-card lit-review-card"><div class="lit-guide-title"><span class="lit-step">${i+1}</span><div><small>${item.reviewKind}</small><b>${esc(item.name||item.title)}</b></div></div><button class="lit-reveal" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden;this.textContent=this.nextElementSibling.hidden?'أعرض المعلومة':'أخفِ المعلومة'">أعرض المعلومة</button><div class="lit-review-answer" hidden><ul>${facts}</ul></div></article>`;});
+  }
+  const sourceMap=activeLiteratureView==='source-notes'?`<article class="lit-source-map"><b>خريطة صفحات الأقسام</b><small>كتاب الطالب: ${esc(w.source_files?.student_book||'كتاب الطالب للصف السادس الإعدادي')} · كتاب النشاط: ${esc(w.source_files?.activity_book||'كتاب النشاط للصف السادس الإعدادي')}</small><div class="lit-source-map-scroll"><table><thead><tr><th>القسم</th><th>كتاب الطالب</th><th>كتاب النشاط</th></tr></thead><tbody>${(w.section_page_map||[]).map(row=>`<tr><td>${row.section}</td><td>${literatureFormatPages(row.student_book_pages)}</td><td>${literatureFormatPages(row.activity_book_pages)}</td></tr>`).join('')}</tbody></table></div><p>${esc(window.LITERATURE_GUIDE?.source_audit?.method||'')}</p></article>`:'';
+  return `<section class="lit-guide-work">${head}${activeLiteratureView==='events'?overview:''}${sourceMap}<div class="lit-guide-cards">${items.join('')}</div></section>`;
  }).join('');
+ filterLiteratureGuide();
+}
+function filterLiteratureGuide(){
+ const q=(document.getElementById('literatureGuideSearch')?.value||'').trim().toLocaleLowerCase();
+ const cards=[...document.querySelectorAll('#literatureGuideResults .lit-guide-card')];let shown=0;
+ cards.forEach(card=>{const match=!q||card.textContent.toLocaleLowerCase().includes(q);card.hidden=!match;if(match)shown++;});
+ const count=document.getElementById('literatureGuideCount');if(count)count.textContent=q?`النتائج المطابقة: ${shown} من ${cards.length}`:`عدد البطاقات: ${cards.length}`;
 }
 function goHome(){document.getElementById('contentPanel').hidden=true;document.getElementById('mainGrid').hidden=false;document.querySelector('.section-head').hidden=false;document.querySelector('.hero').hidden=false;document.querySelector('.note').hidden=false;window.scrollTo({top:0,behavior:'smooth'})}
 document.getElementById('menuBtn').addEventListener('click',()=>showSection('units'));
