@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102b46">
+<title>ALI MU'IZ AL-SHALLAH | English Learning</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-mark">A<span>M</span></div>
+  <div class="brand-copy"><strong>ALI MU'IZ AL-SHALLAH</strong><small>English Learning · Sixth Preparatory</small></div>
+  <button class="icon-btn" aria-label="القائمة" id="menuBtn">☰</button>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">منهج السادس الإعدادي · 2027</div>
+    <h1>طريقك إلى التفوق<br><span>في اللغة الإنكليزية</span></h1>
+    <p>شرح القواعد، المفردات، التمارين، الأدب والاختبارات في مكان واحد.</p>
+    <div class="hero-actions">
+      <button class="primary" onclick="showSection('units')">ابدأ الدراسة <b>←</b></button>
+      <button class="secondary" onclick="showSection('search')">ابحث في المحتوى</button>
+    </div>
+    <div class="hero-decoration">ENGLISH<br><b>2027</b></div>
+  </section>
+
+  <section class="section-head">
+    <div><span class="eyebrow dark">محتويات التطبيق</span><h2>اختر القسم</h2></div>
+    <span class="pill">الأقسام الرسمية · v1.2.0</span>
+  </section>
+
+  <section class="grid" id="mainGrid">
+    <button class="tile tile-feature" onclick="showSection('units')"><span class="tile-icon">▤</span><b>الوحدات الدراسية</b><small>الوحدات 1–8 والدروس</small><span class="arrow">←</span></button>
+    
+    <button class="tile" onclick="showSection('grammar')"><span class="tile-icon">Aa</span><b>القواعد</b><small>شرح وأمثلة</small></button>
+    <button class="tile" onclick="showSection('exercises')"><span class="tile-icon">✎</span><b>التمارين</b><small>مرتبة حسب الموضوع</small></button>
+    <button class="tile" onclick="showSection('vocabulary')"><span class="tile-icon">A–Z</span><b>المفردات</b><small>الكلمة ومعناها</small></button>
+    <button class="tile" onclick="showSection('literature')"><span class="tile-icon">▣</span><b>الأدب</b><small>الرواية والمسرحية</small></button>
+    <button class="tile" onclick="showSection('tests')"><span class="tile-icon">✓</span><b>الاختبارات</b><small>اختبر معلوماتك</small></button>
+    <button class="tile" onclick="showSection('search')"><span class="tile-icon">⌕</span><b>بحث شامل</b><small>ابحث عن درس أو كلمة</small></button>
+  </section>
+
+  <section id="contentPanel" class="content-panel" hidden>
+    <button class="back" onclick="goHome()">→ الرئيسية</button>
+    <div id="panelBody"></div>
+  </section>
+
+  <section class="note">
+    <span>i</span><div><b>ملاحظة حول هذه النسخة</b><p>الإصدار 1.4.0 (الإصدار التفاعلي 2027): واجهة 1.2.0 الرسمية كاملة + قسم «الإصدار التفاعلي 2027» v1.12.2 المحدَّث بدل النسخة v1.5.1 القديمة — شاشة ترحيب، تدريب تفاعلي بسؤال وجواب، مستند قواعد مرجعي، أدب وأسئلة وزارية — مع زر عودة إلى الرئيسية والتخزين المحلي المحفوظ.</p></div>
+  </section>
+</main>
+<footer><b>AM</b><span>ALI MU'IZ AL-SHALLAH</span><small>تعليم · تنظيم · تفوق</small></footer>
+<script src="exercise_data.js"></script>
+<script src="grammar_data.js"></script>
+<script src="vocabulary_data.js"></script>
+<script src="literature_data.js"></script>
+<script src="literature_guide_data.js"></script>
+<script src="literature_answers.js"></script>
+<script src="app.js"></script>
+<a href="../index.html" style="position:fixed;bottom:18px;left:18px;z-index:9998;display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:999px;background:#102b46;color:#fff;font-family:inherit;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.25)">→ الرئيسية</a>
+</body></html>
